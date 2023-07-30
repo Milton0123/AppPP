@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background"
+    tools:context=".sale_activity">
+
+    <ImageView
+        android:id="@+id/sale_btn_back"
+        android:layout_width="30dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/atras" />
+
+    <EditText
+        android:id="@id/sale_text_idproducto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:ems="10"
+        android:hint="Ingrese ID de producto"
+        android:textColor="@color/color_text"
+        android:textSize="24dp"
+        android:inputType="number"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.303"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/sale_img_find"
+        android:layout_width="37dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="76dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.436"
+        app:layout_constraintStart_toEndOf="@+id/sale_text_idproducto"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/buscar" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/sale_btn_qr"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:text="Escanear QR"
+        android:textSize="24dp"
+        android:textColor="@color/color_text"
+        android:background="@drawable/sale_btn_first"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sale_text_idproducto" />
+
+    <TextView
+        android:id="@id/sale_text_product"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:layout_marginLeft="42dp"
+        android:layout_marginRight="40dp"
+        android:hint="Producto"
+        android:textSize="24sp"
+        android:textColor="@color/color_text"
+        app:layout_constraintTop_toBottomOf="@+id/sale_btn_qr" />
+
+    <EditText
+        android:id="@+id/sale_text_amount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="160dp"
+        android:ems="10"
+        android:hint="Ingrese la cantidad"
+        android:textColor="@color/color_text"
+        android:inputType="number"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sale_text_product" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/sale_btn_load"
+        android:layout_width="101dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/sale_btn_second"
+        android:text="Cargar"
+        android:textColor="@color/color_text"
+        android:textSize="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.285"
+        app:layout_constraintStart_toEndOf="@+id/sale_text_amount"
+        app:layout_constraintTop_toBottomOf="@+id/sale_text_product" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@id/sale_recyclerView_list"
+        android:layout_width="326dp"
+        android:layout_height="215dp"
+        android:layout_marginTop="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sale_text_amount" />
+
+    <TextView
+        android:id="@+id/sale_text_total"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginRight="160dp"
+        android:hint="Total"
+        android:textColor="@color/color_text"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.21"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sale_recyclerView_list" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/sale_btn_sell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="40dp"
+        android:text="Comprar"
+        android:textSize="24dp"
+        android:textColor="@color/color_text"
+        android:background="@drawable/sale_btn_third"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sale_recyclerView_list" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

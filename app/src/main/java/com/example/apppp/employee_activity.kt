@@ -1,12 +1,11 @@
-package com.example.apppp.ui
+package com.example.apppp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.apppp.R
 
-class stock_activity : AppCompatActivity() {
+class employee_activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_stock)
+        setContentView(R.layout.activity_employee)
     }
 }
