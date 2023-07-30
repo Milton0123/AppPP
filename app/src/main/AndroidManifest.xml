@@ -14,10 +14,20 @@
         android:theme="@style/Theme.AppPP"
         tools:targetApi="31">
         <activity
+            android:name=".sales_activity"
+            android:exported="false" />
+        <activity
+            android:name=".stock_admin_activity"
+            android:exported="false" />
+        <activity
+            android:name=".sale_admin_activity"
+            android:exported="false" />
+        <activity
+            android:name=".stock_activity"
+            android:exported="false" />
+        <activity
             android:name=".admin_activity"
             android:exported="false" />
-        <activity android:name=".ui.stock_activity" />
-        <activity android:name=".ui.sale_activity" />
         <activity
             android:name=".employee_activity"
             android:exported="false" />

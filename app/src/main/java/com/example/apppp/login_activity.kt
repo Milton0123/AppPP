@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.example.apppp.databinding.ActivityLoginBinding
-import com.example.apppp.ui.sale_activity
 
 
 class login_activity : AppCompatActivity() {
@@ -37,7 +36,7 @@ class login_activity : AppCompatActivity() {
         if(binding.loginTextUser.text.toString() == users.admin.name &&
             binding.loginTextPassword.text.toString() == users.admin.password){
 
-            val intent2=Intent(this, sale_activity::class.java)
+            val intent2=Intent(this, admin_activity::class.java)
             startActivity(intent2)
         }
     }
