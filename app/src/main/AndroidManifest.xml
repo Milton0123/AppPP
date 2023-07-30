@@ -17,20 +17,15 @@
             android:name=".stock_activity"
             android:exported="false" />
         <activity
-            android:name=".sale_activity"
-            android:exported="false" />
-        <activity
             android:name=".employee_activity"
             android:exported="false" />
         <activity
-            android:name=".login_activity"
-            android:exported="true">
+            android:name=".login_activity"></activity>
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
     </application>
 
 </manifest>
