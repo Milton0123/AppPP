@@ -37,7 +37,7 @@ class login_activity : AppCompatActivity() {
         if(binding.loginTextUser.text.toString() == users.admin.name &&
             binding.loginTextPassword.text.toString() == users.admin.password){
 
-            val intent2=Intent(this, sale_activity::class.java)
+            val intent2=Intent(this, admin_activity::class.java)
             startActivity(intent2)
         }
     }
