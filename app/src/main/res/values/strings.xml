@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AppPP</string>
+    <string name="home_admin_admin_tv_title">Administrador</string>
+    <string name="home_bt_sales">Ventas</string>
+    <string name="home_bt_stock">Ver stock</string>
+    <string name="home_bt_products">Crud productos</string>
+
+
 </resources>
