@@ -12,4 +12,5 @@
     <color name="color_btn1">#A000FF</color>
     <color name="color_btn2">#81ABCE</color>
     <color name="color_btn3">#3F9FD4</color>
+    <color name="txt_color_gray">#EFEFEF</color>
 </resources>

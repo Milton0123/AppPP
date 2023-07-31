@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">AppPP</string>
+    <string name="et_id_proveedor_product">Ingrese id del proveedor</string>
+    <string name="et_quantity_products">Cantidad de productos</string>
+    <string name="et_name_product">Nombre de producto</string>
+    <string name="et_price_product">Precio de producto</string>
+    <string name="et_id_product">Ingrese Id producto</string>
+    <string name="bt_modify_product">Modificar</string>
+    <string name="bt_remove_product">Eliminar</string>
+    <string name="bt_add_product">Agregar</string>
 </resources>
