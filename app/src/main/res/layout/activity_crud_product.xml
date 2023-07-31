@@ -16,61 +16,67 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/atras" />
+
     <TextView
         android:layout_width="200dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
         android:text="Productos"
-        android:textSize="40sp"
         android:textColor="@color/color_text"
+        android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@id/crud_product_lnl_recycler_search"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="20dp"/>
+        app:layout_constraintStart_toStartOf="parent" />
+
     <LinearLayout
         android:id="@+id/crud_product_lnl_recycler_search"
         android:layout_width="300dp"
         android:layout_height="480dp"
+        android:layout_marginTop="130dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="130dp">
+        app:layout_constraintTop_toTopOf="parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="horizontal">
+
             <EditText
                 android:id="@+id/crud_ed_id_product"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:hint="@string/et_id_product"
-                android:textColor="@color/black"
-                android:paddingStart="10dp"
                 android:layout_weight="4"
-                android:background="@color/white"/>
+                android:background="@color/white"
+                android:hint="@string/et_id_product"
+                android:paddingStart="10dp"
+                android:textColor="@color/black" />
+
             <ImageView
                 android:id="@+id/crud_iv_search"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.8"
                 android:layout_margin="5dp"
-                android:background="@drawable/buscar"/>
+                android:layout_weight="0.8"
+                android:background="@drawable/buscar" />
         </LinearLayout>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/crud_rv_product"
             android:layout_width="match_parent"
             android:layout_height="170dp"
+            android:layout_marginTop="20dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem=""
-            android:layout_marginTop="20dp"/>
+            tools:listitem="" />
+
         <EditText
             android:id="@+id/crud_et_id_proveedor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:hint="@string/et_id_proveedor_product"
-            android:textSize="20sp"
-            android:layout_margin="5dp">
-        </EditText>
+            android:textSize="20sp"/>
 
         <EditText
             android:id="@+id/crud_et_name_product"
@@ -78,16 +84,15 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:hint="@string/et_name_product"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/crud_et_price_product"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
             android:hint="@string/et_price_product"
-            android:textSize="20sp"
-            android:layout_margin="5dp">
-        </EditText>
+            android:textSize="20sp"/>
 
         <EditText
             android:id="@+id/crud_et_quantity_product"
@@ -95,18 +100,18 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:hint="@string/et_quantity_products"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="300dp"
         android:layout_height="60dp"
+        android:layout_marginBottom="60dp"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="60dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/crud_bt_add"
@@ -122,20 +127,20 @@
             android:id="@+id/crud_bt_remove"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:text="@string/bt_remove_product"
-            android:textSize="15sp"
-            android:textColor="@color/txt_color_gray"
             android:layout_weight="1"
-            android:background="@drawable/radius_bg_red"/>
+            android:background="@drawable/radius_bg_red"
+            android:text="@string/bt_remove_product"
+            android:textColor="@color/txt_color_gray"
+            android:textSize="15sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/crud_bt_modify"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/radius_bg_yelow"
             android:text="@string/bt_modify_product"
             android:textColor="@color/txt_color_gray"
-            android:textSize="15sp"
-            android:background="@drawable/radius_bg_yelow"/>
+            android:textSize="15sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
