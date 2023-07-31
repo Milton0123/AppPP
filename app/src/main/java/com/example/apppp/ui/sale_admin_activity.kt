@@ -1,20 +1,18 @@
-package com.example.apppp
+package com.example.apppp.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.apppp.databinding.ActivityStockAdminBinding
+import com.example.apppp.databinding.ActivitySaleAdminBinding
 
-class stock_admin_activity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityStockAdminBinding
-
+class sale_admin_activity : AppCompatActivity() {
+    private lateinit var binding: ActivitySaleAdminBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityStockAdminBinding.inflate(layoutInflater)
+        binding = ActivitySaleAdminBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.stockadminBtnBack.setOnClickListener{volver()}
+        binding.saleadminBtnBack.setOnClickListener{volver()}
     }
 
     fun volver(){

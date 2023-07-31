@@ -14,25 +14,25 @@
         android:theme="@style/Theme.AppPP"
         tools:targetApi="31">
         <activity
-            android:name=".sales_activity"
+            android:name=".ui.sales_activity"
             android:exported="false" />
         <activity
-            android:name=".stock_admin_activity"
+            android:name=".ui.stock_admin_activity"
             android:exported="false" />
         <activity
-            android:name=".sale_admin_activity"
+            android:name=".ui.sale_admin_activity"
             android:exported="false" />
         <activity
-            android:name=".stock_activity"
+            android:name=".ui.stock_activity"
             android:exported="false" />
         <activity
-            android:name=".admin_activity"
+            android:name=".ui.admin_activity"
             android:exported="false" />
         <activity
-            android:name=".employee_activity"
+            android:name=".ui.employee_activity"
             android:exported="false" />
         <activity
-            android:name=".login_activity"
+            android:name=".ui.login_activity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

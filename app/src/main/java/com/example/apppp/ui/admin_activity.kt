@@ -1,4 +1,4 @@
-package com.example.apppp
+package com.example.apppp.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
