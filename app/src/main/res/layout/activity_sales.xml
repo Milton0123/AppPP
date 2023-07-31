@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_background"
-    tools:context=".sales_activity">
+    tools:context=".ui.sales_activity">
 
     <ImageView
         android:id="@+id/sale_btn_back"
