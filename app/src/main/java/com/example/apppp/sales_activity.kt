@@ -3,18 +3,18 @@ package com.example.apppp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.apppp.databinding.ActivityStockBinding
+import com.example.apppp.databinding.ActivitySalesBinding
 
-class stock_activity : AppCompatActivity() {
+class sales_activity : AppCompatActivity() {
 
-   private lateinit var binding: ActivityStockBinding
+    private lateinit var binding: ActivitySalesBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityStockBinding.inflate(layoutInflater)
+        binding = ActivitySalesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.stockBtnBack.setOnClickListener {volver()}
+        binding.saleBtnBack.setOnClickListener{volver()}
     }
 
     fun volver(){

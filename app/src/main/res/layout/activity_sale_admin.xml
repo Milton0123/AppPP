@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_background"
-    tools:context=".sale_activity">
+    tools:context=".sale_admin_activity">
 
     <ImageView
-        android:id="@+id/sale_btn_back"
+        android:id="@+id/saleadmin_btn_back"
         android:layout_width="30dp"
         android:layout_height="35dp"
         android:layout_marginStart="10dp"
@@ -18,7 +18,7 @@
         app:srcCompat="@drawable/atras" />
 
     <EditText
-        android:id="@id/sale_text_idproducto"
+        android:id="@+id/saleadmin_text_idproducto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
@@ -33,18 +33,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/sale_img_find"
+        android:id="@+id/saleadmin_img_find"
         android:layout_width="37dp"
         android:layout_height="43dp"
         android:layout_marginTop="76dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.436"
-        app:layout_constraintStart_toEndOf="@+id/sale_text_idproducto"
+        app:layout_constraintStart_toEndOf="@+id/saleadmin_text_idproducto"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/buscar" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/sale_btn_qr"
+        android:id="@+id/saleadmin_btn_qr"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="16dp"
@@ -56,10 +56,10 @@
         android:background="@drawable/sale_btn_first"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sale_text_idproducto" />
+        app:layout_constraintTop_toBottomOf="@+id/saleadmin_text_idproducto" />
 
     <TextView
-        android:id="@id/sale_text_product"
+        android:id="@+id/saleadmin_text_product"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
@@ -68,10 +68,10 @@
         android:hint="Producto"
         android:textSize="24sp"
         android:textColor="@color/color_text"
-        app:layout_constraintTop_toBottomOf="@+id/sale_btn_qr" />
+        app:layout_constraintTop_toBottomOf="@+id/saleadmin_btn_qr" />
 
     <EditText
-        android:id="@+id/sale_text_amount"
+        android:id="@+id/saleadmin_text_amount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
@@ -84,10 +84,10 @@
         android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sale_text_product" />
+        app:layout_constraintTop_toBottomOf="@+id/saleadmin_text_product" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/sale_btn_load"
+        android:id="@+id/saleadmin_btn_load"
         android:layout_width="101dp"
         android:layout_height="56dp"
         android:layout_marginStart="3dp"
@@ -98,21 +98,21 @@
         android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.285"
-        app:layout_constraintStart_toEndOf="@+id/sale_text_amount"
-        app:layout_constraintTop_toBottomOf="@+id/sale_text_product" />
+        app:layout_constraintStart_toEndOf="@+id/saleadmin_text_amount"
+        app:layout_constraintTop_toBottomOf="@+id/saleadmin_text_product" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@id/sale_recyclerView_list"
+        android:id="@+id/saleadmin_recyclerView_list"
         android:layout_width="326dp"
         android:layout_height="215dp"
         android:layout_marginTop="35dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sale_text_amount" />
+        app:layout_constraintTop_toBottomOf="@+id/saleadmin_text_amount" />
 
     <TextView
-        android:id="@+id/sale_text_total"
+        android:id="@+id/saleadmin_text_total"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
@@ -124,10 +124,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.21"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sale_recyclerView_list" />
+        app:layout_constraintTop_toBottomOf="@+id/saleadmin_recyclerView_list" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/sale_btn_sell"
+        android:id="@+id/saleadmin_btn_sell"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -137,6 +137,6 @@
         android:textColor="@color/color_text"
         android:background="@drawable/sale_btn_third"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sale_recyclerView_list" />
+        app:layout_constraintTop_toBottomOf="@+id/saleadmin_recyclerView_list" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

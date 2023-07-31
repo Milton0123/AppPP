@@ -14,20 +14,32 @@
         android:theme="@style/Theme.AppPP"
         tools:targetApi="31">
         <activity
-
-            android:name=".ui.stock_activity"
+            android:name=".sales_activity"
+            android:exported="false" />
+        <activity
+            android:name=".stock_admin_activity"
+            android:exported="false" />
+        <activity
+            android:name=".sale_admin_activity"
+            android:exported="false" />
+        <activity
+            android:name=".stock_activity"
+            android:exported="false" />
+        <activity
+            android:name=".admin_activity"
             android:exported="false" />
         <activity
             android:name=".employee_activity"
             android:exported="false" />
         <activity
-            android:name=".login_activity"></activity>
-
+            android:name=".login_activity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
     </application>
 
 </manifest>
