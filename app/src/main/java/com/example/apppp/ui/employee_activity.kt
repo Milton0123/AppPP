@@ -14,22 +14,22 @@ class employee_activity : AppCompatActivity() {
         binding = ActivityEmployeeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.employeeBtnBack.setOnClickListener {volver()}
-        binding.employeeBtnStock.setOnClickListener {ir_stock()}
-        binding.employeeBtnSale.setOnClickListener {ir_ventas()}
+        binding.employeeBtnBack.setOnClickListener { volver() }
+        binding.employeeBtnStock.setOnClickListener { ir_stock() }
+        binding.employeeBtnSale.setOnClickListener { ir_ventas() }
     }
 
-    fun volver(){
-        val back= Intent(this, login_activity::class.java)
+    fun volver() {
+        val back = Intent(this, login_activity::class.java)
         startActivity(back)
     }
 
-    fun ir_ventas(){
+    fun ir_ventas() {
         val ventas = Intent(this, sales_activity::class.java)
         startActivity(ventas)
     }
 
-    fun ir_stock(){
+    fun ir_stock() {
         val stock = Intent(this, stock_activity::class.java)
         startActivity(stock)
     }

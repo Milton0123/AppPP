@@ -14,11 +14,11 @@ class sales_activity : AppCompatActivity() {
         binding = ActivitySalesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.saleBtnBack.setOnClickListener{volver()}
+        binding.saleBtnBack.setOnClickListener { volver() }
     }
 
-    fun volver(){
-        val intent= Intent(this, employee_activity::class.java)
+    fun volver() {
+        val intent = Intent(this, employee_activity::class.java)
         startActivity(intent)
     }
 }
