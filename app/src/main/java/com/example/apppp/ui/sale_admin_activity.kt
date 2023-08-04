@@ -12,11 +12,11 @@ class sale_admin_activity : AppCompatActivity() {
         binding = ActivitySaleAdminBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.saleadminBtnBack.setOnClickListener{volver()}
+        binding.saleadminBtnBack.setOnClickListener { volver() }
     }
 
-    fun volver(){
-        val intent= Intent(this, admin_activity::class.java)
+    fun volver() {
+        val intent = Intent(this, admin_activity::class.java)
         startActivity(intent)
     }
 }

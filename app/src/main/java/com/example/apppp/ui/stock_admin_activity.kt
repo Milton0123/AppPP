@@ -14,11 +14,11 @@ class stock_admin_activity : AppCompatActivity() {
         binding = ActivityStockAdminBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.stockadminBtnBack.setOnClickListener{volver()}
+        binding.stockadminBtnBack.setOnClickListener { volver() }
     }
 
-    fun volver(){
-        val intent= Intent(this, admin_activity::class.java)
+    fun volver() {
+        val intent = Intent(this, admin_activity::class.java)
         startActivity(intent)
     }
 }

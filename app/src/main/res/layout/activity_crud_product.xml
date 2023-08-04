@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_background"
-    tools:context=".crud_product_activity">
+    tools:context=".ui.crud_product_activity">
 
     <ImageView
         android:id="@+id/crud_product_iv_back"
@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:hint="@string/et_id_proveedor_product"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/crud_et_name_product"
@@ -92,7 +92,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:hint="@string/et_price_product"
-            android:textSize="20sp"/>
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/crud_et_quantity_product"
