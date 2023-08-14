@@ -50,20 +50,19 @@
         app:layout_constraintTop_toBottomOf="@+id/admin_btn_sale" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/admin_btn_abm"
+        android:id="@+id/admin_btn_product"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_marginLeft="40dp"
         android:layout_marginTop="92dp"
         android:layout_marginRight="40dp"
         android:background="@drawable/admin_btn_third"
-        android:text="AGREGAR USUARIO"
+        android:text="AGREGAR PRODUCTO"
         android:textColor="@color/color_text"
         android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/admin_btn_stock" />
-
 
     <ImageView
         android:id="@+id/admin_btn_back"

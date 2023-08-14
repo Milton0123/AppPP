@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_background"
-    tools:context=".ui.crud_product_activity">
+    tools:context=".ui.abm_product_activity">
 
     <ImageView
         android:id="@+id/crud_product_iv_back"
@@ -23,15 +23,15 @@
         android:layout_marginBottom="20dp"
         android:text="Productos"
         android:textColor="@color/color_text"
-        android:textSize="40sp"
+        android:textSize="30dp"
         app:layout_constraintBottom_toTopOf="@id/crud_product_lnl_recycler_search"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <LinearLayout
         android:id="@+id/crud_product_lnl_recycler_search"
-        android:layout_width="300dp"
-        android:layout_height="480dp"
+        android:layout_width="308dp"
+        android:layout_height="492dp"
         android:layout_marginTop="130dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,8 +48,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="4"
-                android:background="@color/white"
-                android:hint="@string/et_id_product"
+                android:hint="Ingrese ID de producto"
+                android:inputType="number"
                 android:paddingStart="10dp"
                 android:textColor="@color/black" />
 
@@ -73,41 +73,48 @@
         <EditText
             android:id="@+id/crud_et_id_proveedor"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="53dp"
             android:layout_margin="5dp"
-            android:hint="@string/et_id_proveedor_product"
-            android:textSize="20sp" />
+            android:hint="Ingrese ID del proveedor"
+            android:inputType="number"
+            android:textColor="@color/color_text"
+            android:textSize="24dp" />
 
         <EditText
             android:id="@+id/crud_et_name_product"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:hint="@string/et_name_product"
-            android:textSize="20sp" />
+            android:hint="Nombre del producto"
+            android:textColor="@color/color_text"
+            android:textSize="24dp" />
 
         <EditText
             android:id="@+id/crud_et_price_product"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:hint="@string/et_price_product"
-            android:textSize="20sp" />
+            android:hint="Precio del producto"
+            android:textColor="@color/color_text"
+            android:inputType="number"
+            android:textSize="24dp" />
 
         <EditText
             android:id="@+id/crud_et_quantity_product"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
-            android:hint="@string/et_quantity_products"
-            android:textSize="20sp" />
+            android:hint="Ingrese la cantidad"
+            android:textColor="@color/color_text"
+            android:inputType="number"
+            android:textSize="24dp" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="300dp"
         android:layout_height="60dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="40dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -120,7 +127,7 @@
             android:layout_weight="1"
             android:background="@drawable/radius_bg_green"
             android:text="@string/bt_add_product"
-            android:textColor="@color/txt_color_gray"
+            android:textColor="@color/color_text"
             android:textSize="15sp" />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -143,4 +150,5 @@
             android:textColor="@color/txt_color_gray"
             android:textSize="15sp" />
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

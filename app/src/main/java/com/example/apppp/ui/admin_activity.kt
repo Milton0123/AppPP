@@ -17,6 +17,7 @@ class admin_activity : AppCompatActivity() {
         binding.adminBtnBack.setOnClickListener { volver() }
         binding.adminBtnSale.setOnClickListener { ir_ventas() }
         binding.adminBtnStock.setOnClickListener { ir_stock() }
+        binding.adminBtnProduct.setOnClickListener { ir_abm() }
     }
 
     fun volver() {
@@ -32,5 +33,10 @@ class admin_activity : AppCompatActivity() {
     fun ir_stock() {
         val stock = Intent(this, stock_admin_activity::class.java)
         startActivity(stock)
+    }
+
+    fun ir_abm(){
+        val user = Intent(this, abm_product_activity::class.java)
+        startActivity(user)
     }
 }
