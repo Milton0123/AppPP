@@ -5,18 +5,20 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.apppp.databinding.ActivitySaleAdminBinding
 
-class sale_admin_activity : AppCompatActivity() {
+class SaleAdminActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySaleAdminBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySaleAdminBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        binding.saleadminBtnBack.setOnClickListener { volver() }
+        onClicks()
+    }
+    private fun onClicks(){
+        binding.saleAdminBtnBack.setOnClickListener { backAdmin() }
     }
 
-    fun volver() {
-        val intent = Intent(this, admin_activity::class.java)
+    private fun backAdmin() {
+        val intent = Intent(this, AdminActivity::class.java)
         startActivity(intent)
     }
 }

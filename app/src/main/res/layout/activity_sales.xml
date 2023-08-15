@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_background"
-    tools:context=".ui.sales_activity">
+    tools:context=".ui.SalesEmployeeActivity">
 
     <ImageView
         android:id="@+id/sale_btn_back"
@@ -15,7 +15,8 @@
         android:layout_marginTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/atras" />
+        app:srcCompat="@drawable/ic_back_arrow"
+        android:contentDescription="@string/arrow_back"/>
 
     <EditText
         android:id="@id/sale_text_idproducto"
@@ -23,10 +24,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
         android:ems="10"
-        android:hint="Ingrese ID de producto"
+        android:hint="@string/id_product"
+        android:autofillHints="id product"
         android:inputType="number"
         android:textColor="@color/color_text"
-        android:textSize="24dp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.303"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +43,8 @@
         app:layout_constraintHorizontal_bias="0.436"
         app:layout_constraintStart_toEndOf="@+id/sale_text_idproducto"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/buscar" />
+        app:srcCompat="@drawable/icon_find"
+        android:contentDescription="@string/icon_find"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/sale_btn_qr"
@@ -51,9 +54,9 @@
         android:layout_marginTop="16dp"
         android:layout_marginRight="40dp"
         android:background="@drawable/sale_btn_first"
-        android:text="Escanear QR"
+        android:text="@string/scan_barcode"
         android:textColor="@color/color_text"
-        android:textSize="24dp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sale_text_idproducto" />
@@ -62,10 +65,10 @@
         android:id="@id/sale_text_product"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="42dp"
+        android:layout_marginStart="42dp"
         android:layout_marginTop="35dp"
-        android:layout_marginRight="40dp"
-        android:hint="Producto"
+        android:layout_marginEnd="40dp"
+        android:hint="@string/context_product"
         android:textColor="@color/color_text"
         android:textSize="24sp"
         app:layout_constraintTop_toBottomOf="@+id/sale_btn_qr" />
@@ -74,14 +77,15 @@
         android:id="@+id/sale_text_amount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="160dp"
+        android:layout_marginEnd="160dp"
         android:ems="10"
-        android:hint="Ingrese la cantidad"
+        android:hint="@string/in_quantity"
+        android:autofillHints="add quantity"
         android:inputType="number"
         android:textColor="@color/color_text"
-        android:textSize="24dp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sale_text_product" />
@@ -93,9 +97,9 @@
         android:layout_marginStart="3dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/sale_btn_second"
-        android:text="Cargar"
+        android:text="@string/context_add_product"
         android:textColor="@color/color_text"
-        android:textSize="24dp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.285"
         app:layout_constraintStart_toEndOf="@+id/sale_text_amount"
@@ -108,7 +112,7 @@
         android:layout_marginTop="35dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:orientation="horizontal"
-        tools:listitem="@layout/item_rv_ventas"
+        tools:listitem="@layout/item_rv_sales"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
@@ -118,10 +122,10 @@
         android:id="@+id/sale_text_total"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="32dp"
-        android:layout_marginRight="160dp"
-        android:hint="Total"
+        android:layout_marginEnd="160dp"
+        android:hint="@string/context_entire"
         android:textColor="@color/color_text"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -136,9 +140,9 @@
         android:layout_marginTop="24dp"
         android:layout_marginEnd="40dp"
         android:background="@drawable/sale_btn_third"
-        android:text="Comprar"
+        android:text="@string/context_buy"
         android:textColor="@color/color_text"
-        android:textSize="24dp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sale_recyclerView_list" />
 </androidx.constraintlayout.widget.ConstraintLayout>

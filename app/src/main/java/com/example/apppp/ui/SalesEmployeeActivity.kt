@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.apppp.databinding.ActivitySalesBinding
 
-class sales_activity : AppCompatActivity() {
+class  SalesEmployeeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySalesBinding
 
@@ -14,11 +14,11 @@ class sales_activity : AppCompatActivity() {
         binding = ActivitySalesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.saleBtnBack.setOnClickListener { volver() }
+        binding.saleBtnBack.setOnClickListener { backEmployee() }
     }
 
-    fun volver() {
-        val intent = Intent(this, employee_activity::class.java)
+    private fun backEmployee() {
+        val intent = Intent(this, EmployeeActivity::class.java)
         startActivity(intent)
     }
 }

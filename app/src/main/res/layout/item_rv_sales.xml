@@ -4,41 +4,46 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <ImageView
-        android:id="@+id/item_sales_iv_product"
+        android:id="@+id/item_iv_product"
         android:layout_width="100dp"
         android:layout_height="100dp"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="20dp"/>
+        android:layout_margin="20dp"
+        android:contentDescription="@string/img_product"/>
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/item_sales_iv_product"
+        app:layout_constraintTop_toBottomOf="@id/item_iv_product"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_margin="20dp">
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:maxLines="1"
-            android:maxLength="30"/>}
-        <TextView
+            android:id="@+id/item_tv_id"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:maxLines="1"
             android:maxLength="30"/>
         <TextView
+            android:id="@+id/item_tv_name"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:maxLines="1"
             android:maxLength="30"/>
         <TextView
+            android:id="@+id/item_tv_price"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:maxLength="30"/>
+        <TextView
+            android:id="@+id/item_tv_quantity"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"

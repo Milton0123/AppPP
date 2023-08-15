@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_background"
-    tools:context=".ui.login_activity">
+    tools:context=".ui.LoginActivity">
 
     <TextView
         android:id="@+id/login_text_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="EMSolution"
+        android:text="@string/title_em_solution"
         android:textColor="@color/color_text"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,7 +27,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_text_name"
-        app:srcCompat="@drawable/logo" />
+        app:srcCompat="@drawable/logo"
+        android:contentDescription="@string/icon_em_solution"/>
 
     <EditText
         android:id="@+id/login_text_user"
@@ -37,10 +38,11 @@
         android:layout_marginTop="33dp"
         android:layout_marginRight="42dp"
         android:ems="10"
-        android:hint="Usuario"
+        android:autofillHints="user"
+        android:hint="@string/in_user"
         android:inputType="textPersonName"
         android:textColor="@color/color_text"
-        android:textSize="24dp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_img_icon" />
@@ -53,10 +55,11 @@
         android:layout_marginTop="33dp"
         android:layout_marginRight="42dp"
         android:ems="10"
-        android:hint="Contraseña"
+        android:hint="@string/in_password"
         android:inputType="textPassword"
+        android:autofillHints="password"
         android:textColor="@color/color_text"
-        android:textSize="24dp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_text_user" />
@@ -69,9 +72,9 @@
         android:layout_marginTop="33dp"
         android:layout_marginRight="42dp"
         android:background="@drawable/login_btn"
-        android:text="Ingresar"
+        android:text="@string/context_add"
         android:textColor="@color/color_text"
-        android:textSize="24dp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_text_password" />
