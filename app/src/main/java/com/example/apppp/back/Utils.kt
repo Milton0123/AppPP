@@ -7,6 +7,19 @@ import com.example.apppp.ui.EmployeeActivity
 
 object Utils {
 
+    private fun checkPassword(pass: String): Boolean {
+        return pass.length in 6..15 && !pass.contains(" ") && pass.all { it.isLetterOrDigit() }
+    }
+
+    private fun checkUser(user: String): Boolean {
+        return user.length in 4..15 && !user.contains(" ") && user.all { it.isLetterOrDigit() }
+    }
+
+    fun checkFields(user: String, pass: String): Boolean {
+        return checkUser(user) && checkPassword(pass)
+    }
+
+
     /*
      fun validateFields() {
         if (binding.loginTextUser.text.toString().isEmpty()) {
