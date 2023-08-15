@@ -20,5 +20,6 @@ class SaleAdminActivity : AppCompatActivity() {
     private fun backAdmin() {
         val intent = Intent(this, AdminActivity::class.java)
         startActivity(intent)
+        finish()
     }
 }

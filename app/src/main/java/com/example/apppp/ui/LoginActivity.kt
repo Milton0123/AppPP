@@ -1,14 +1,12 @@
 package com.example.apppp.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.core.widget.doAfterTextChanged
 import androidx.lifecycle.ViewModelProvider
-import com.example.apppp.back.ProductRepository
-import com.example.apppp.back.ProductViewModel
-import com.example.apppp.back.ProductViewModelFactory
-import com.example.apppp.back.Users
+import com.example.apppp.back.*
 import com.example.apppp.databinding.ActivityLoginBinding
 
 
@@ -48,7 +46,7 @@ class LoginActivity : AppCompatActivity() {
         }
         viewModel.userData.observe(this) {
             if (it) {
-                Toast.makeText(this, "success", Toast.LENGTH_SHORT).show()
+                goToNextScreen(binding.loginTextUser.text.toString())
             } else {
                 Toast.makeText(this, "error", Toast.LENGTH_SHORT).show()
             }
@@ -67,6 +65,22 @@ class LoginActivity : AppCompatActivity() {
                 binding.loginTextUser.text.toString(),
                 it.toString()
             )
+        }
+    }
+    fun goToNextScreen(screen : String) {
+        when (screen) {
+            "admin" -> {
+                startActivity(Intent(this, AdminActivity::class.java))
+                finish()
+            }
+            "employee" -> {
+                startActivity(Intent(this, AdminActivity::class.java))
+                finish()
+            }
+            else -> {
+                Toast.makeText(this, "user not valid", Toast.LENGTH_SHORT).show()
+            }
+
         }
     }
 

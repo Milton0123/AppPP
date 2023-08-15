@@ -27,5 +27,6 @@ class AbmProductActivity : AppCompatActivity() {
     private fun backActivity() {
         val back = Intent(this, AdminActivity::class.java)
         startActivity(back)
+        finish()
     }
 }

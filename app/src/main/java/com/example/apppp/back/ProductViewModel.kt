@@ -11,7 +11,8 @@ class ProductViewModel(private val repository: ProductRepository = ProductReposi
         fieldData.postValue(Utils.checkFields(userName, password))
     }
 
-    fun checkUsers(name: String, password: String) {
-        userData.postValue(repository.checkUserExist(name, password))
+    fun checkUsers(user: String, password: String) {
+        userData.postValue(repository.checkUserExist(user, password))
     }
+
 }

@@ -20,5 +20,6 @@ class  SalesEmployeeActivity : AppCompatActivity() {
     private fun backEmployee() {
         val intent = Intent(this, EmployeeActivity::class.java)
         startActivity(intent)
+        finish()
     }
 }

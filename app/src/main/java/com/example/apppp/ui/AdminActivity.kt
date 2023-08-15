@@ -25,20 +25,24 @@ class AdminActivity : AppCompatActivity() {
     private fun backLogin() {
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
+        finish()
     }
 
     private fun goSales() {
         val sales = Intent(this, SaleAdminActivity::class.java)
         startActivity(sales)
+        finish()
     }
 
     private fun goStock() {
         val stock = Intent(this, StockAdminActivity::class.java)
         startActivity(stock)
+        finish()
     }
 
     private fun goAbm(){
         val user = Intent(this, AbmProductActivity::class.java)
         startActivity(user)
+        finish()
     }
 }

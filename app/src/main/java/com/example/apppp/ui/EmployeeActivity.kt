@@ -24,16 +24,19 @@ class EmployeeActivity : AppCompatActivity() {
     private fun backLogin() {
         val back = Intent(this, LoginActivity::class.java)
         startActivity(back)
+        finish()
     }
 
     private fun goSales() {
         val sales = Intent(this, SalesEmployeeActivity::class.java)
         startActivity(sales)
+        finish()
     }
 
     private fun goStock() {
         val stock = Intent(this, StockActivity::class.java)
         startActivity(stock)
+        finish()
     }
 }
 

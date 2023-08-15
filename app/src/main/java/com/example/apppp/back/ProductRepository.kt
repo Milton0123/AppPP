@@ -21,7 +21,7 @@ class ProductRepository {
 fun sellProduct(product: String) {
 }
     */
-    private fun validateUser(user: String): String {
+    fun validateUser(user: String): String {
         return when (user) {
             Users.admin.name -> "admin"
             Users.empleados.name -> "employee"
@@ -38,11 +38,8 @@ fun sellProduct(product: String) {
     }
 
     fun checkUserExist(user: String, pass: String): Boolean {
-        return !((validateUser(user) == "not found" || validatePass(pass) == "not found") && ((validateUser(
-            user
-        ) == (validatePass(pass)))))
+        return !((validateUser(user) == "not found" || validatePass(pass) == "not found") && ((validateUser(user) != (validatePass(pass)))))
     }
-
 
     /*
     private fun addProduct() {
