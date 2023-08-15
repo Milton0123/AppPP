@@ -14,4 +14,6 @@
     <color name="color_btn3">#3F9FD4</color>
     <color name="txt_color_gray">#EFEFEF</color>
     <color name="color_btn1_off">#E1C76AFF</color>
+    <color name="back_all_item">#4E688E</color>
+    <color name="back_only_item">#90ACD5</color>
 </resources>

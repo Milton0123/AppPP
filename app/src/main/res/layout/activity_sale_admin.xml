@@ -109,14 +109,13 @@
         android:id="@+id/sale_admin_recyclerView_list"
         android:layout_width="326dp"
         android:layout_height="215dp"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="52dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:orientation="horizontal"
-        tools:listitem="@layout/item_rv_sales"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sale_admin_text_amount" />
+        app:layout_constraintTop_toBottomOf="@+id/sale_admin_text_amount"
+        tools:listitem="@layout/item_rv_sales" />
 
     <TextView
         android:id="@+id/sale_admin_text_total"

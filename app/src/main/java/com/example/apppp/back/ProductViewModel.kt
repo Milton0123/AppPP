@@ -15,4 +15,8 @@ class ProductViewModel(private val repository: ProductRepository = ProductReposi
         userData.postValue(repository.checkUserExist(user, password))
     }
 
+    fun getListProducts(): MutableList<ProductData>{
+        return repository.getList()
+    }
+
 }

@@ -74,7 +74,7 @@ class LoginActivity : AppCompatActivity() {
                 finish()
             }
             "employee" -> {
-                startActivity(Intent(this, AdminActivity::class.java))
+                startActivity(Intent(this, EmployeeActivity::class.java))
                 finish()
             }
             else -> {

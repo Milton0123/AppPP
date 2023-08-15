@@ -40,7 +40,9 @@ fun sellProduct(product: String) {
     fun checkUserExist(user: String, pass: String): Boolean {
         return !((validateUser(user) == "not found" || validatePass(pass) == "not found") && ((validateUser(user) != (validatePass(pass)))))
     }
-
+    fun getList(): MutableList<ProductData>{
+        return ProductBD.list
+    }
     /*
     private fun addProduct() {
         val supplierId = binding.crudEtIdProveedor.text.toString().toInt()
