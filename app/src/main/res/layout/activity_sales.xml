@@ -13,19 +13,19 @@
         android:layout_height="35dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
+        android:contentDescription="@string/arrow_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_back_arrow"
-        android:contentDescription="@string/arrow_back"/>
+        app:srcCompat="@drawable/ic_back_arrow" />
 
     <EditText
         android:id="@id/sale_text_idproducto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
+        android:autofillHints="id product"
         android:ems="10"
         android:hint="@string/id_product"
-        android:autofillHints="id product"
         android:inputType="number"
         android:textColor="@color/color_text"
         android:textSize="24sp"
@@ -39,12 +39,12 @@
         android:layout_width="37dp"
         android:layout_height="43dp"
         android:layout_marginTop="76dp"
+        android:contentDescription="@string/icon_find"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.436"
         app:layout_constraintStart_toEndOf="@+id/sale_text_idproducto"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icon_find"
-        android:contentDescription="@string/icon_find"/>
+        app:srcCompat="@drawable/icon_find" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/sale_btn_qr"
@@ -80,9 +80,9 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="160dp"
+        android:autofillHints="add quantity"
         android:ems="10"
         android:hint="@string/in_quantity"
-        android:autofillHints="add quantity"
         android:inputType="number"
         android:textColor="@color/color_text"
         android:textSize="24sp"
@@ -110,13 +110,13 @@
         android:layout_width="280dp"
         android:layout_height="250dp"
         android:layout_marginTop="35dp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:orientation="horizontal"
-        tools:listitem="@layout/item_rv_sales"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sale_text_amount" />
+        app:layout_constraintTop_toBottomOf="@+id/sale_text_amount"
+        tools:listitem="@layout/item_rv_azul" />
 
     <TextView
         android:id="@+id/sale_text_total"

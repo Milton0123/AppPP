@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.apppp.back.*
 import com.example.apppp.databinding.ActivitySalesBinding
 
-class  SalesEmployeeActivity : AppCompatActivity() {
+class SalesEmployeeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySalesBinding
     private lateinit var viewModel: ProductViewModel
@@ -22,21 +22,22 @@ class  SalesEmployeeActivity : AppCompatActivity() {
         initViewModel()
     }
 
-    private fun initViewModel(){
+    private fun initViewModel() {
         val viewModelFactory = ProductViewModelFactory(repository)
         viewModel = ViewModelProvider(this, viewModelFactory)[(ProductViewModel::class.java)]
         initRecyclerView(viewModel.getListProducts())
     }
 
-    private fun initRecyclerView(list : MutableList<ProductData>){
+    private fun initRecyclerView(list: MutableList<ProductData>) {
         val adapter = ProductAdapter(list)
         binding.saleRecyclerViewList.adapter = adapter
     }
 
-    private fun onClicks(){
+    private fun onClicks() {
         binding.saleBtnBack.setOnClickListener { backEmployee() }
 
     }
+
     private fun backEmployee() {
         val intent = Intent(this, EmployeeActivity::class.java)
         startActivity(intent)

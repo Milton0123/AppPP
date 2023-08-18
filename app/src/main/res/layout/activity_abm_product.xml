@@ -73,7 +73,7 @@
             android:layout_marginTop="20dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             android:orientation="horizontal"
-            tools:listitem="@layout/item_rv_sales" />
+            tools:listitem="@layout/item_rv_azul" />
 
         <EditText
             android:id="@+id/crud_et_id_proveedor"

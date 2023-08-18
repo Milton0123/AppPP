@@ -41,6 +41,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/stock_admin_text_title_stock"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_rv_sales"/>
+        tools:listitem="@layout/item_rv_azul"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

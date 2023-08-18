@@ -38,10 +38,27 @@ fun sellProduct(product: String) {
     }
 
     fun checkUserExist(user: String, pass: String): Boolean {
-        return !((validateUser(user) == "not found" || validatePass(pass) == "not found") && ((validateUser(user) != (validatePass(pass)))))
+        return !((validateUser(user) == "not found" || validatePass(pass) == "not found") && ((validateUser(
+            user
+        ) != (validatePass(pass)))))
     }
-    fun getList(): MutableList<ProductData>{
+
+    fun getList(): MutableList<ProductData> {
         return ProductBD.list
+    }
+    fun searchProduct(barcode: String):String{
+        var messageSearch = ""
+        var messageSearchError = ""
+        ProductBD.list.forEach{
+            if(barcode == it.barcode){
+                messageSearch = it.name.toString()
+                messageSearchError = "product success"
+            }
+        }
+        if(messageSearchError != "product success"){
+            messageSearch = "product error"
+        }
+        return messageSearch
     }
     /*
     private fun addProduct() {

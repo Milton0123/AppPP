@@ -6,6 +6,8 @@ import androidx.lifecycle.ViewModel
 class ProductViewModel(private val repository: ProductRepository = ProductRepository()) : ViewModel() {
     val fieldData = MutableLiveData<Boolean>()
     val userData = MutableLiveData<Boolean>()
+    val barcodeData = MutableLiveData<String>()
+    val fieldDataAmount = MutableLiveData<ProductData>()
 
     fun validateButton(userName: String, password: String) {
         fieldData.postValue(Utils.checkFields(userName, password))
@@ -18,5 +20,11 @@ class ProductViewModel(private val repository: ProductRepository = ProductReposi
     fun getListProducts(): MutableList<ProductData>{
         return repository.getList()
     }
+    fun validateSearch(barcode: String){
+        return barcodeData.postValue(repository.searchProduct(barcode))
+    }
 
+    fun checkField(field : Int, barcode: String){
+        fieldDataAmount.postValue(Utils.checkField(field,barcode))
+    }
 }
