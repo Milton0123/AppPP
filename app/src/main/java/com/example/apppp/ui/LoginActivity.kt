@@ -48,7 +48,7 @@ class LoginActivity : AppCompatActivity() {
             if (it) {
                 goToNextScreen(binding.loginTextUser.text.toString())
             } else {
-                Toast.makeText(this, "error", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -78,7 +78,7 @@ class LoginActivity : AppCompatActivity() {
                 finish()
             }
             else -> {
-                Toast.makeText(this, "user not valid", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "User not valid", Toast.LENGTH_SHORT).show()
             }
 
         }
