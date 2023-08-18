@@ -42,9 +42,18 @@ class SaleAdminActivity : AppCompatActivity() {
         binding.saleAdminBtnBack.setOnClickListener { backAdmin() }
         binding.saleAdminImgFind.setOnClickListener { viewModel.validateSearch(binding.saleAdminTextIdProduct.text.toString()) }
         binding.saleAdminBtnLoad.setOnClickListener {
-            viewModel.checkField(
-                binding.saleAdminTextAmount.text.toString().toInt(), productBarcode
-            )
+            if (binding.saleAdminTextAmount.text.isNullOrEmpty()) {
+                Toast.makeText(this, "error", Toast.LENGTH_SHORT).show()
+            } else {
+                viewModel.checkField(
+                    binding.saleAdminTextAmount.text.toString().toInt(), productBarcode
+                )
+            }
+
+        }
+        binding.saleAdminBtnSell.setOnClickListener {
+            deleteProduct()
+            cleanListBD()
         }
     }
 
@@ -66,7 +75,11 @@ class SaleAdminActivity : AppCompatActivity() {
         }
         viewModel.fieldDataAmount.observe(this) {
             if (it.barcode == "error") {
-                Toast.makeText(this, "supera el stock disponible que es de ${it.quantity}", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this,
+                    "supera el stock disponible que es de ${it.quantity} o el campo esta vacio",
+                    Toast.LENGTH_SHORT
+                ).show()
             } else {
                 addProductList(it.barcode, it.name, it.price, it.quantity)
                 totalProduct()
@@ -74,7 +87,7 @@ class SaleAdminActivity : AppCompatActivity() {
         }
     }
 
-    private fun addProductList(barcode: String, name: String, price: Int?, quantity: Int) {
+    private fun addProductList(barcode: String, name: String, price: Int, quantity: Int) {
         var quantityLimit = 0
         if (nameAfter == name) {
             ProductBD.list.forEach {
@@ -83,12 +96,12 @@ class SaleAdminActivity : AppCompatActivity() {
                 }
             }
             buyList.forEach {
-                if(barcodeAfter != barcode){
-                it.quantity += quantity
-                if (it.quantity > quantityLimit) {
-                    it.quantity -= ( it.quantity-quantityLimit)
-                    Toast.makeText(this, "ya no hay stock", Toast.LENGTH_SHORT).show()
-                }
+                if (barcodeAfter != barcode) {
+                    it.quantity += quantity
+                    if (it.quantity > quantityLimit) {
+                        it.quantity -= (it.quantity - quantityLimit)
+                        Toast.makeText(this, "ya no hay stock", Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
             initRecyclerView(buyList)
@@ -96,19 +109,44 @@ class SaleAdminActivity : AppCompatActivity() {
             buyList.add(ProductData(barcode, name, price, quantity))
             barcodeAfter = barcode
             nameAfter = name
+            binding.saleAdminBtnSell.isEnabled = true
             initRecyclerView(buyList)
         }
     }
 
+    private fun deleteProduct() {
+        ProductBD.list.forEach() { listBD ->
+            buyList.forEach { listSell ->
+                if (listBD.barcode == listSell.barcode) {
+                    listBD.quantity -= listSell.quantity
+                    Toast.makeText(this, "el producto se elimino con exito", Toast.LENGTH_SHORT)
+                        .show()
+                    initRecyclerView(ProductBD.list)
+                }
+            }
+        }
+    }
 
-    private fun totalProduct(){
+
+    private fun totalProduct() {
         var priceTotal = 0
-        buyList.forEach{
+        buyList.forEach {
             val price = it.price.toString()
             val quantity = it.quantity
             priceTotal += price.toInt() * quantity
         }
         binding.saleAdminTextTotal.text = priceTotal.toString()
+    }
+
+    private fun cleanListBD() {
+        binding.saleAdminTextIdProduct.text.clear()
+        binding.saleAdminTextAmount.text.clear()
+        binding.saleAdminTextTotal.text = "Total"
+        binding.saleAdminTextProduct.text = "Producto"
+        nameAfter = ""
+        barcodeAfter = ""
+        buyList.clear()
+        initRecyclerView(ProductBD.list)
     }
 
 

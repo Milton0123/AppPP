@@ -33,7 +33,7 @@ object ProductBD {
             12
         ),
         ProductData(
-            "12333333",
+            "6",
             "repasadores",
             436,
             35
