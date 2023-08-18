@@ -3,11 +3,14 @@ package com.example.apppp.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
 import android.widget.Toast
 import androidx.core.widget.doAfterTextChanged
 import androidx.lifecycle.ViewModelProvider
 import com.example.apppp.back.*
 import com.example.apppp.databinding.ActivitySaleAdminBinding
+import com.google.zxing.integration.android.IntentIntegrator
+import com.google.zxing.integration.android.IntentResult
 
 class SaleAdminActivity : AppCompatActivity() {
     private lateinit var binding: ActivitySaleAdminBinding
@@ -49,11 +52,13 @@ class SaleAdminActivity : AppCompatActivity() {
                     binding.saleAdminTextAmount.text.toString().toInt(), productBarcode
                 )
             }
-
         }
         binding.saleAdminBtnSell.setOnClickListener {
             deleteProduct()
             cleanListBD()
+        }
+        binding.saleAdminBtnQr.setOnClickListener{
+            startBarcodeScanner()
         }
     }
 
@@ -150,13 +155,32 @@ class SaleAdminActivity : AppCompatActivity() {
     }
 
 
-    /*
-    private fun saleProductList(name: String,amount : Int){
-        ProductBD.list.forEach{
-            if(it.name == name){
-                ProductBD.list.add()
-            }
+    private fun startBarcodeScanner() {
+        val integrator = IntentIntegrator(this)  // Crea un objeto IntentIntegrator
+
+        // Configura opciones para el escaneo
+        integrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES)
+        integrator.setPrompt("Escanea un código de barras")
+        integrator.setCameraId(0) // Usar cámara trasera
+        integrator.setBeepEnabled(false)
+
+        // Inicia el escaneo
+        integrator.initiateScan()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        val result: IntentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
+
+        if (result.contents != null) {
+            val scannedBarcodeValue = result.contents
+            val editableScannedValue = Editable.Factory.getInstance().newEditable(scannedBarcodeValue)
+            binding.saleAdminTextIdProduct.text = editableScannedValue
+        } else {
+            // Manejar el caso en que el escaneo no fue exitoso
+            Toast.makeText(this, "no se ha escaneado ningun producto", Toast.LENGTH_SHORT).show()
         }
     }
-    */
 }
+
