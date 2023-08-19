@@ -16,5 +16,6 @@
     <color name="color_btn1_off">#E1C76AFF</color>
     <color name="back_all_item">#4E688E</color>
     <color name="back_only_item">#90ACD5</color>
+    <color name="bg_splash">#5b5b5b</color>
 
 </resources>

@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.widget.doAfterTextChanged
 import androidx.lifecycle.ViewModelProvider
 import com.example.apppp.back.*
@@ -16,6 +17,7 @@ class LoginActivity : AppCompatActivity() {
     private var repository = ProductRepository()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val screenSplash = installSplashScreen()
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -23,6 +25,7 @@ class LoginActivity : AppCompatActivity() {
         checkChangesField()
         observers()
         onClicks()
+        screenSplash.setKeepOnScreenCondition { false }
     }
 
     private fun initViewModel() {
