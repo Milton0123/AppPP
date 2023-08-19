@@ -4,25 +4,7 @@ import android.widget.Toast
 
 
 class ProductRepository {
-    /*
-    VENTA
-    revisar si la lista tiene el producto que yo quiero borrar
-    en caso de tenerlo revisar que la cantidad de stock sea mayor o
-    igual a la cantidad a eliminar
 
-    RESULTADO DE LO VALIDADO
-    devolver result <Product>
-
-    posibles status:
-    SUCCESS
-    STOCK INSUFICIENTE
-    PRODUCTO NO ENCONTRADO
-
-
-    Cuando traiga ver stock omitir a los que tengan un stock de 0
-fun sellProduct(product: String) {
-}
-    */
     fun validateUser(user: String): String {
         return when (user) {
             Users.admin.name -> "admin"
@@ -48,16 +30,17 @@ fun sellProduct(product: String) {
     fun getList(): MutableList<ProductData> {
         return ProductBD.list
     }
-    fun searchProduct(barcode: String):String{
+
+    fun searchProduct(barcode: String): String {
         var messageSearch = ""
         var messageSearchError = ""
-        ProductBD.list.forEach{
-            if(barcode == it.barcode){
+        ProductBD.list.forEach {
+            if (barcode == it.barcode) {
                 messageSearch = it.name.toString()
                 messageSearchError = "product success"
             }
         }
-        if(messageSearchError != "product success"){
+        if (messageSearchError != "product success") {
             messageSearch = "product error"
         }
         return messageSearch

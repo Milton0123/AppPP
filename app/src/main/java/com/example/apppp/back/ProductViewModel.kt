@@ -3,12 +3,12 @@ package com.example.apppp.back
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class ProductViewModel(private val repository: ProductRepository = ProductRepository()) : ViewModel() {
+class ProductViewModel(private val repository: ProductRepository = ProductRepository()) :
+    ViewModel() {
     val fieldData = MutableLiveData<Boolean>()
     val userData = MutableLiveData<Boolean>()
     val barcodeData = MutableLiveData<String>()
     val fieldDataAmount = MutableLiveData<ProductData>()
-    val fieldAddAndRemove = MutableLiveData<Boolean>()
 
     fun validateButton(userName: String, password: String) {
         fieldData.postValue(Utils.checkFields(userName, password))
@@ -18,17 +18,19 @@ class ProductViewModel(private val repository: ProductRepository = ProductReposi
         userData.postValue(repository.checkUserExist(user, password))
     }
 
-    fun getListProducts(): MutableList<ProductData>{
+    fun getListProducts(): MutableList<ProductData> {
         return repository.getList()
     }
-    fun validateSearch(barcode: String){
+
+    fun validateSearch(barcode: String) {
         return barcodeData.postValue(repository.searchProduct(barcode))
     }
 
-    fun checkField(field : Int, barcode: String){
-        fieldDataAmount.postValue(Utils.checkField(field,barcode))
+    fun checkField(field: Int, barcode: String) {
+        fieldDataAmount.postValue(Utils.checkField(field, barcode))
     }
-    fun updateProduct(updatedProduct: ProductData){
+
+    fun updateProduct(updatedProduct: ProductData) {
         repository.updateProduct(updatedProduct)
     }
 
@@ -38,3 +40,4 @@ class ProductViewModel(private val repository: ProductRepository = ProductReposi
 
 
 }
+

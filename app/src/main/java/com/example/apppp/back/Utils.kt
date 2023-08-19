@@ -21,21 +21,22 @@ object Utils {
     }
 
     fun checkField(field: Int, barcode: String): ProductData {
-        var emptyStock : ProductData
+        var emptyStock: ProductData
         var stockLimitActual = 0
         ProductBD.list.forEach {
             if (barcode == it.name) {
                 stockLimitActual = it.quantity
             }
         }
-        emptyStock = ProductData("error","",0,stockLimitActual)
+        emptyStock = ProductData("error", "", 0, stockLimitActual)
         ProductBD.list.forEach {
             if (barcode == it.name) {
                 if (it.quantity >= field) {
-                    emptyStock = ProductData(it.barcode,barcode,it.price,field)
+                    emptyStock = ProductData(it.barcode, barcode, it.price, field)
                 }
             }
         }
         return emptyStock
     }
 }
+

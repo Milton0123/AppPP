@@ -8,7 +8,7 @@
     tools:context=".ui.SalesEmployeeActivity">
 
     <ImageView
-        android:id="@+id/sale_btn_back"
+        android:id="@+id/sale_employee_btn_back"
         android:layout_width="30dp"
         android:layout_height="35dp"
         android:layout_marginStart="10dp"
@@ -19,11 +19,11 @@
         app:srcCompat="@drawable/ic_back_arrow" />
 
     <EditText
-        android:id="@id/sale_text_idproducto"
+        android:id="@+id/sale_Employee_text_id_product"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
-        android:autofillHints="id product"
+        android:autofillHints="id"
         android:ems="10"
         android:hint="@string/id_product"
         android:inputType="number"
@@ -35,19 +35,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/sale_img_find"
+        android:id="@+id/sale_Employee_img_find"
         android:layout_width="37dp"
         android:layout_height="43dp"
         android:layout_marginTop="76dp"
         android:contentDescription="@string/icon_find"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.436"
-        app:layout_constraintStart_toEndOf="@+id/sale_text_idproducto"
+        app:layout_constraintHorizontal_bias="0.446"
+        app:layout_constraintStart_toEndOf="@+id/sale_Employee_text_id_product"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/icon_find" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/sale_btn_qr"
+        android:id="@+id/sale_Employee_btn_qr"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginLeft="40dp"
@@ -59,10 +59,10 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sale_text_idproducto" />
+        app:layout_constraintTop_toBottomOf="@+id/sale_Employee_text_id_product" />
 
     <TextView
-        android:id="@id/sale_text_product"
+        android:id="@+id/sale_Employee_text_product"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="42dp"
@@ -71,55 +71,58 @@
         android:hint="@string/context_product"
         android:textColor="@color/color_text"
         android:textSize="24sp"
-        app:layout_constraintTop_toBottomOf="@+id/sale_btn_qr" />
+        app:layout_constraintTop_toBottomOf="@+id/sale_Employee_btn_qr" />
 
     <EditText
-        android:id="@+id/sale_text_amount"
+        android:id="@+id/sale_Employee_text_amount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="160dp"
-        android:autofillHints="add quantity"
+        android:autofillHints="quantity"
         android:ems="10"
+        android:enabled="false"
         android:hint="@string/in_quantity"
         android:inputType="number"
+        android:maxLength="10"
         android:textColor="@color/color_text"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sale_text_product" />
+        app:layout_constraintTop_toBottomOf="@+id/sale_Employee_text_product" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/sale_btn_load"
+        android:id="@+id/sale_Employee_btn_load"
         android:layout_width="101dp"
         android:layout_height="56dp"
         android:layout_marginStart="3dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/sale_btn_second"
+        android:background="@drawable/login_btn"
+        android:enabled="false"
         android:text="@string/context_add_product"
         android:textColor="@color/color_text"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.285"
-        app:layout_constraintStart_toEndOf="@+id/sale_text_amount"
-        app:layout_constraintTop_toBottomOf="@+id/sale_text_product" />
+        app:layout_constraintStart_toEndOf="@+id/sale_Employee_text_amount"
+        app:layout_constraintTop_toBottomOf="@+id/sale_Employee_text_product" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@id/sale_recyclerView_list"
-        android:layout_width="280dp"
-        android:layout_height="250dp"
-        android:layout_marginTop="35dp"
-        android:orientation="horizontal"
+        android:id="@+id/sale_Employee_recyclerView_list"
+        android:layout_width="0dp"
+        android:layout_height="215dp"
+        android:layout_marginHorizontal="40dp"
+        android:layout_marginTop="52dp"
+        android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sale_text_amount"
-        tools:listitem="@layout/item_rv_azul" />
+        app:layout_constraintTop_toBottomOf="@+id/sale_Employee_text_amount"
+        tools:listitem="@layout/item_rv_list" />
 
     <TextView
-        android:id="@+id/sale_text_total"
+        android:id="@+id/sale_Employee_text_total"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
@@ -131,18 +134,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.21"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sale_recyclerView_list" />
+        app:layout_constraintTop_toBottomOf="@+id/sale_Employee_recyclerView_list" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/sale_btn_sell"
+        android:id="@+id/sale_Employee_btn_sell"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="40dp"
-        android:background="@drawable/sale_btn_third"
+        android:background="@drawable/login_btn"
+        android:enabled="false"
         android:text="@string/context_buy"
         android:textColor="@color/color_text"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sale_recyclerView_list" />
+        app:layout_constraintTop_toBottomOf="@+id/sale_Employee_recyclerView_list" />
 </androidx.constraintlayout.widget.ConstraintLayout>

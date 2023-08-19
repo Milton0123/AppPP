@@ -3,13 +3,15 @@ package com.example.apppp.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.example.apppp.back.*
 import com.example.apppp.databinding.ActivitySalesBinding
+import com.google.zxing.integration.android.IntentIntegrator
+import com.google.zxing.integration.android.IntentResult
 
 class SalesEmployeeActivity : AppCompatActivity() {
-
     private lateinit var binding: ActivitySalesBinding
     private var viewModel = ProductViewModel()
     private var repository = ProductRepository()
@@ -35,26 +37,28 @@ class SalesEmployeeActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerView(list: MutableList<ProductData>) {
-        val adapter = ProductAdapter(list)
-        binding.saleRecyclerViewList.adapter = adapter
+        val adapter = ProductAdapterList(list)
+        binding.saleEmployeeRecyclerViewList.adapter = adapter
     }
 
     private fun onClicks() {
-        binding.saleBtnBack.setOnClickListener { backEmployee() }
-        binding.saleImgFind.setOnClickListener { viewModel.validateSearch(binding.saleTextIdproducto.text.toString()) }
-        binding.saleBtnLoad.setOnClickListener {
-            if (binding.saleTextAmount.text.isNullOrEmpty()) {
+        binding.saleEmployeeBtnBack.setOnClickListener { backEmployee() }
+        binding.saleEmployeeImgFind.setOnClickListener { viewModel.validateSearch(binding.saleEmployeeTextIdProduct.text.toString()) }
+        binding.saleEmployeeBtnLoad.setOnClickListener {
+            if (binding.saleEmployeeTextAmount.text.isNullOrEmpty()) {
                 Toast.makeText(this, "error", Toast.LENGTH_SHORT).show()
             } else {
                 viewModel.checkField(
-                    binding.saleTextAmount.text.toString().toInt(), productBarcode
+                    binding.saleEmployeeTextAmount.text.toString().toInt(), productBarcode
                 )
             }
-
         }
-        binding.saleBtnSell.setOnClickListener {
+        binding.saleEmployeeBtnSell.setOnClickListener {
             deleteProduct()
             cleanListBD()
+        }
+        binding.saleEmployeeBtnQr.setOnClickListener {
+            startBarcodeScanner()
         }
     }
 
@@ -67,9 +71,9 @@ class SalesEmployeeActivity : AppCompatActivity() {
     private fun observe() {
         viewModel.barcodeData.observe(this) { barcode ->
             if (barcode.toString() != "product error") {
-                binding.saleTextProduct.text = barcode.toString()
-                binding.saleTextAmount.isEnabled = true
-                binding.saleBtnLoad.isEnabled = true
+                binding.saleEmployeeTextProduct.text = barcode.toString()
+                binding.saleEmployeeTextAmount.isEnabled = true
+                binding.saleEmployeeBtnLoad.isEnabled = true
                 productBarcode = barcode.toString()
             }
             Toast.makeText(this, barcode.toString(), Toast.LENGTH_SHORT).show()
@@ -110,7 +114,7 @@ class SalesEmployeeActivity : AppCompatActivity() {
             buyList.add(ProductData(barcode, name, price, quantity))
             barcodeAfter = barcode
             nameAfter = name
-            binding.saleBtnSell.isEnabled = true
+            binding.saleEmployeeBtnSell.isEnabled = true
             initRecyclerView(buyList)
         }
     }
@@ -136,17 +140,48 @@ class SalesEmployeeActivity : AppCompatActivity() {
             val quantity = it.quantity
             priceTotal += price.toInt() * quantity
         }
-        binding.saleTextTotal.text = priceTotal.toString()
+        binding.saleEmployeeTextTotal.text = priceTotal.toString()
     }
 
     private fun cleanListBD() {
-        binding.saleTextIdproducto.text.clear()
-        binding.saleTextAmount.text.clear()
-        binding.saleTextTotal.text = "Total"
-        binding.saleTextProduct.text = "Producto"
+        binding.saleEmployeeTextIdProduct.text.clear()
+        binding.saleEmployeeTextAmount.text.clear()
+        binding.saleEmployeeTextTotal.text = "Total"
+        binding.saleEmployeeTextProduct.text = "Producto"
         nameAfter = ""
         barcodeAfter = ""
         buyList.clear()
         initRecyclerView(ProductBD.list)
+    }
+
+
+    private fun startBarcodeScanner() {
+        val integrator = IntentIntegrator(this)  // Crea un objeto IntentIntegrator
+
+        // Configura opciones para el escaneo
+        integrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES)
+        integrator.setPrompt("Escanea un código de barras")
+        integrator.setCameraId(0) // Usar cámara trasera
+        integrator.setBeepEnabled(false)
+
+        // Inicia el escaneo
+        integrator.initiateScan()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        val result: IntentResult =
+            IntentIntegrator.parseActivityResult(requestCode, resultCode, data)
+
+        if (result.contents != null) {
+            val scannedBarcodeValue = result.contents
+            val editableScannedValue =
+                Editable.Factory.getInstance().newEditable(scannedBarcodeValue)
+            binding.saleEmployeeTextIdProduct.text = editableScannedValue
+        } else {
+            // Manejar el caso en que el escaneo no fue exitoso
+            Toast.makeText(this, "no se ha escaneado ningun producto", Toast.LENGTH_SHORT).show()
+        }
     }
 }

@@ -67,7 +67,8 @@ class LoginActivity : AppCompatActivity() {
             )
         }
     }
-    fun goToNextScreen(screen : String) {
+
+    fun goToNextScreen(screen: String) {
         when (screen) {
             "admin" -> {
                 startActivity(Intent(this, AdminActivity::class.java))
