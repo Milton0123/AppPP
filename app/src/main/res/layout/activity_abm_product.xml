@@ -76,11 +76,11 @@
             tools:listitem="@layout/item_rv_azul" />
 
         <EditText
-            android:id="@+id/crud_et_id_proveedor"
+            android:id="@+id/crud_et_id_barcode"
             android:layout_width="match_parent"
             android:layout_height="53dp"
             android:layout_margin="5dp"
-            android:hint="@string/id_supplier"
+            android:hint="@string/id_barcode"
             android:inputType="number"
             android:textColor="@color/color_text"
             android:textSize="24sp"
@@ -157,7 +157,8 @@
             android:background="@drawable/radius_bg_yelow"
             android:text="@string/bt_modify_product"
             android:textColor="@color/txt_color_gray"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:enabled="false"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

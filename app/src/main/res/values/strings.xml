@@ -12,7 +12,7 @@
     <string name="arrow_back">button arrow back</string>
     <string name="id_product">Ingrese ID de producto</string>
     <string name="icon_find">icon find product</string>
-    <string name="id_supplier">Ingrese ID del proveedor</string>
+    <string name="id_barcode">Ingrese ID producto</string>
     <string name="name_product">Nombre del producto</string>
     <string name="price_product">Precio del producto</string>
     <string name="quantity">Ingrese la cantidad</string>

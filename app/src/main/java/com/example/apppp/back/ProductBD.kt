@@ -40,17 +40,5 @@ object ProductBD {
         )
     )
 
-    fun findProductById(productId: String): ProductData? {
-        return list.find { it.barcode == productId }
-    }
-
-    fun updateProduct(updatedProduct: ProductData) {
-        val index = list.indexOfFirst { it.barcode == updatedProduct.barcode }
-        if (index != -1) {
-            val oldProduct = list[index]
-            list[index] = updatedProduct.copy(barcode = oldProduct.barcode)
-        }
-    }
-
 }
 

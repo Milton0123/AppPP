@@ -33,8 +33,8 @@ class LoginActivity : AppCompatActivity() {
     private fun onClicks() {
         binding.loginBtnRedirect.setOnClickListener {
             viewModel.checkUsers(
-                binding.loginTextUser.text.toString(),
-                binding.loginTextPassword.text.toString()
+                binding.loginTextUser.text.toString().trim(),
+                binding.loginTextPassword.text.toString().trim()
             )
         }
 

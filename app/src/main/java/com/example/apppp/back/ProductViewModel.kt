@@ -8,6 +8,7 @@ class ProductViewModel(private val repository: ProductRepository = ProductReposi
     val userData = MutableLiveData<Boolean>()
     val barcodeData = MutableLiveData<String>()
     val fieldDataAmount = MutableLiveData<ProductData>()
+    val fieldAddAndRemove = MutableLiveData<Boolean>()
 
     fun validateButton(userName: String, password: String) {
         fieldData.postValue(Utils.checkFields(userName, password))
@@ -27,4 +28,13 @@ class ProductViewModel(private val repository: ProductRepository = ProductReposi
     fun checkField(field : Int, barcode: String){
         fieldDataAmount.postValue(Utils.checkField(field,barcode))
     }
+    fun updateProduct(updatedProduct: ProductData){
+        repository.updateProduct(updatedProduct)
+    }
+
+    fun findProductById(productId: String): ProductData? {
+        return repository.findProductById(productId)
+    }
+
+
 }

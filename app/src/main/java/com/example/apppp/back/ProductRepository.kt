@@ -1,5 +1,7 @@
 package com.example.apppp.back
 
+import android.widget.Toast
+
 
 class ProductRepository {
     /*
@@ -60,70 +62,16 @@ fun sellProduct(product: String) {
         }
         return messageSearch
     }
-    /*
-    private fun addProduct() {
-        val supplierId = binding.crudEtIdProveedor.text.toString().toInt()
-        val productName = binding.crudEtNameProduct.text.toString()
-        val productPrice = binding.crudEtPriceProduct.text.toString().toInt()
-        val productQuantity = binding.crudEtQuantityProduct.text.toString().toInt()
-        val productDataActivity =
-            ProductData(supplierId, productName, productPrice, productQuantity)
-        ProductBD.addProduct(productDataActivity)
 
-        if (supplierId != null && !productName.isNullOrEmpty() && productPrice != null && productQuantity != null) {
-            Toast.makeText(this, "Producto agregado correctamente", Toast.LENGTH_SHORT).show()
-            clear()
-
-            println("Contenido de la lista después de agregar el producto:")
-            for (product in ProductBD.list)
-                println(product)
-
-        } else {
-            Toast.makeText(this, "Error al agregar el producto", Toast.LENGTH_SHORT).show()
-        }
-
+    fun findProductById(productId: String): ProductData? {
+        return ProductBD.list.find { it.barcode == productId }
     }
 
-    private fun deleteProduct() {
-        val productId = binding.crudEdIdProduct.text.toString().toIntOrNull()
-
-        if (productId != null) {
-            delete(productId)
-        } else {
-            Toast.makeText(this, "ID de producto inválido", Toast.LENGTH_SHORT).show()
+    fun updateProduct(updatedProduct: ProductData) {
+        val index = ProductBD.list.indexOfFirst { it.barcode == updatedProduct.barcode }
+        if (index != -1) {
+            val oldProduct = ProductBD.list[index]
+            ProductBD.list[index] = updatedProduct.copy(barcode = oldProduct.barcode)
         }
     }
-
-    private fun delete(id: Int) {
-
-        val productDelete = ProductBD.list.find { it.id == id }
-
-        if (productDelete != null) {
-            ProductBD.list.remove(productDelete)
-            Toast.makeText(this, "Producto eliminado correctamente", Toast.LENGTH_SHORT).show()
-
-            println("Contenido de la lista después de eliminar el producto:")
-            for (product in ProductBD.list)
-                println(product)
-
-            clearId()
-        } else {
-            Toast.makeText(this, "No se ha encontrado el producto, ID invalido", Toast.LENGTH_SHORT)
-                .show()
-        }
-
-    }
-
-    private fun clear() {
-        binding.crudEtIdProveedor.text.clear()
-        binding.crudEtNameProduct.text.clear()
-        binding.crudEtPriceProduct.text.clear()
-        binding.crudEtQuantityProduct.text.clear()
-    }
-
-    private fun clearId() {
-        binding.crudEdIdProduct.text.clear()
-    }
-*/
-
 }
