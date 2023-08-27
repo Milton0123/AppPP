@@ -1,8 +1,9 @@
 package com.example.apppp.back
 
+
 data class ProductData(
-    val id: Int?,
-    val name: String?,
-    val price: Int?,
-    val quantity : Int?
+    var barcode: String,
+    var name: String,
+    var price: Int,
+    var quantity: Int
 )
