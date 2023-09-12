@@ -22,10 +22,10 @@
     <string name="add_product">AGREGAR PRODUCTO</string>
     <string name="title_employee">Empleados</string>
     <string name="title_em_solution">EMSolution</string>
-    <string name="icon_em_solution">icono de EMsolution</string>
-    <string name="in_user">Usuario</string>
-    <string name="in_password">Contraseña</string>
-    <string name="context_add">Ingresar</string>
+    <string name="icon_tamini">icono de EMsolution</string>
+    <string name="in_user">User</string>
+    <string name="in_password">Password</string>
+    <string name="context_add">Enter</string>
     <string name="scan_barcode">Escanear</string>
     <string name="context_product">Producto</string>
     <string name="in_quantity">Ingrese la cantidad</string>
