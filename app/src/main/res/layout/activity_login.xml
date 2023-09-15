@@ -35,7 +35,7 @@
         android:textColor="@color/color_text"
         android:textSize="24sp"
         android:paddingHorizontal="20dp"
-        android:background="@drawable/bc_brown"
+        android:background="@drawable/bc_brown_radius_250"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_icon" />
@@ -53,7 +53,7 @@
         android:textColor="@color/color_text"
         android:textSize="24sp"
         android:paddingHorizontal="20dp"
-        android:background="@drawable/bc_brown"
+        android:background="@drawable/bc_brown_radius_250"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_text_user" />

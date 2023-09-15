@@ -14,7 +14,10 @@
         android:theme="@style/Theme.AppPP"
         tools:targetApi="31">
         <activity
-            android:name=".SplashLogin"
+            android:name=".ui.NewsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.SplashLogin"
             android:exported="false" />
         <activity
             android:name=".ui.AbmProductActivity"
