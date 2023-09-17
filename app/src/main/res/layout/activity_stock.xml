@@ -18,30 +18,53 @@
         app:srcCompat="@drawable/ic_back_arrow"
         android:contentDescription="@string/arrow_back"/>
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/stock_text_titleStock"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/radius_btn"
+        app:layout_constraintBottom_toTopOf="@+id/stock_recyclerView_all_products"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.967" />
+
     <TextView
-        android:id="@+id/stock_text_title_stock"
+        android:id="@+id/stock_text_title_cp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="@string/title_stock"
+        android:layout_marginTop="4dp"
+        android:text="@string/cod_producto"
         android:textColor="@color/color_text"
         android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/stock_text_titleStock"
+        app:layout_constraintHorizontal_bias="0.781"
+        app:layout_constraintStart_toStartOf="@+id/stock_text_titleStock"
+        app:layout_constraintTop_toTopOf="@+id/stock_text_titleStock" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/stock_recyclerView_all_products"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="40dp"
+        android:layout_height="650dp"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/stock_text_title_stock"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_rv_azul"
-        android:orientation="vertical"/>
+        app:layout_constraintTop_toBottomOf="@+id/stock_text_title_cp"
+        tools:listitem="@layout/item_rv_azul" />
+
+    <ImageView
+        android:id="@+id/stock_img_find"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="@+id/stock_text_titleStock"
+        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintStart_toStartOf="@+id/stock_text_titleStock"
+        app:layout_constraintTop_toTopOf="@+id/stock_text_titleStock"
+        app:srcCompat="@drawable/lupa" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
