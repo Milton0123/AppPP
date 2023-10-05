@@ -54,6 +54,6 @@
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <!-- hamburger main -->
-    <string name="navigation_drawer_open">Abrir Menú</string>
-    <string name="navigation_drawer_close">Cerrar Menú</string>
+    <string name="navigation_drawer_open">Open</string>
+    <string name="navigation_drawer_close">Close</string>
 </resources>
