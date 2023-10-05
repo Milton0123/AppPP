@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/back_all_item">
+    android:background="@color/color_background">
     <LinearLayout
         android:id="@+id/sales_ll_items"
         android:layout_width="0dp"
@@ -22,7 +22,7 @@
             android:maxLines="1"
             android:textAlignment="center"
             android:maxLength="30"
-            android:background="@color/back_only_item"
+            android:background="@color/color_rv_background"
             />
         <TextView
             android:id="@+id/item_tv_name"
@@ -32,7 +32,7 @@
             android:maxLines="1"
             android:textAlignment="center"
             android:maxLength="30"
-            android:background="@color/back_only_item"/>
+            android:background="@color/color_rv_background"/>
         <TextView
             android:id="@+id/item_tv_price"
             android:layout_width="match_parent"
@@ -41,7 +41,7 @@
             android:maxLines="1"
             android:textAlignment="center"
             android:maxLength="30"
-            android:background="@color/back_only_item"/>
+            android:background="@color/color_rv_background"/>
         <TextView
             android:id="@+id/item_tv_quantity"
             android:layout_width="match_parent"
@@ -50,7 +50,7 @@
             android:maxLines="1"
             android:textAlignment="center"
             android:maxLength="30"
-            android:background="@color/back_only_item"/>
+            android:background="@color/color_rv_background"/>
 
     </LinearLayout>
 

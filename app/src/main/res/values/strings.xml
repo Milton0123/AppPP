@@ -34,4 +34,15 @@
     <string name="context_buy">Comprar</string>
     <string name="title_stock">STOCK</string>
     <string name="img_product">imagen del producto</string>
+    <string name="Sale">Ventas</string>
+    <string name="cod_producto">Codigo de producto</string>
+    <string name="contentDescription">lupa</string>
+    <string name="cb">CodigoDeBarras</string>
+    <string name="description">Producto</string>
+    <string name="amount">0</string>
+    <string name="arrow_down">bajar</string>
+    <string name="up">Subir</string>
+    <string name="carry">Cargar</string>
+    <string name="finish">Finalizar</string>
+    <string name="total">Total:</string>
 </resources>

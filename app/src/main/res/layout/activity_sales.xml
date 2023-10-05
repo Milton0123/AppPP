@@ -7,146 +7,249 @@
     android:background="@color/color_background"
     tools:context=".ui.SalesEmployeeActivity">
 
-    <ImageView
-        android:id="@+id/sale_employee_btn_back"
-        android:layout_width="30dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:contentDescription="@string/arrow_back"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_back_arrow" />
-
-    <EditText
-        android:id="@+id/sale_Employee_text_id_product"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        android:autofillHints="id"
-        android:ems="10"
-        android:hint="@string/id_product"
-        android:inputType="number"
-        android:textColor="@color/color_text"
-        android:textSize="24sp"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/employee_text_description"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="208dp"
+        android:background="@drawable/radius_btn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.303"
+        app:layout_constraintHorizontal_bias="0.072"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/employee_text_carry"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="340dp"
+        android:background="@drawable/radius_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/employee_text_finish"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="668dp"
+        android:background="@drawable/radius_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/employee_text_amounts"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="208dp"
+        android:background="@drawable/radius_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.981"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/employee_text_isup"
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="272dp"
+        android:background="@drawable/radius_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.99"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/employee_text_isdown"
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="272dp"
+        android:background="@drawable/radius_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.875"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/sale_Employee_img_find"
-        android:layout_width="37dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="76dp"
-        android:contentDescription="@string/icon_find"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.446"
-        app:layout_constraintStart_toEndOf="@+id/sale_Employee_text_id_product"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icon_find" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/sale_Employee_btn_qr"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginRight="40dp"
-        android:background="@drawable/sale_btn_first"
-        android:text="@string/scan_barcode"
-        android:textColor="@color/color_text"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sale_Employee_text_id_product" />
-
-    <TextView
-        android:id="@+id/sale_Employee_text_product"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="40dp"
-        android:hint="@string/context_product"
-        android:textColor="@color/color_text"
-        android:textSize="24sp"
-        app:layout_constraintTop_toBottomOf="@+id/sale_Employee_btn_qr" />
-
-    <EditText
-        android:id="@+id/sale_Employee_text_amount"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:id="@+id/employee_btn_back"
+        android:layout_width="30dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:layout_marginEnd="160dp"
-        android:autofillHints="quantity"
-        android:ems="10"
-        android:enabled="false"
-        android:hint="@string/in_quantity"
-        android:inputType="number"
-        android:maxLength="10"
-        android:textColor="@color/color_text"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sale_Employee_text_product" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back_arrow"
+        android:contentDescription="@string/arrow_back"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/sale_Employee_btn_load"
-        android:layout_width="101dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="3dp"
+        android:id="@+id/employee_text_title"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/login_btn"
-        android:enabled="false"
-        android:text="@string/context_add_product"
-        android:textColor="@color/color_text"
-        android:textSize="24sp"
+        android:background="@drawable/radius_btn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.285"
-        app:layout_constraintStart_toEndOf="@+id/sale_Employee_text_amount"
-        app:layout_constraintTop_toBottomOf="@+id/sale_Employee_text_product" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/sale_Employee_recyclerView_list"
-        android:layout_width="0dp"
-        android:layout_height="215dp"
-        android:layout_marginHorizontal="40dp"
-        android:layout_marginTop="52dp"
-        android:orientation="vertical"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.594"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sale_Employee_text_amount"
-        tools:listitem="@layout/item_rv_list" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/employee_text_cod"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="96dp"
+        android:background="@drawable/radius_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/sale_Employee_text_total"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="160dp"
-        android:hint="@string/context_entire"
-        android:textColor="@color/color_text"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.21"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sale_Employee_recyclerView_list" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/sale_Employee_btn_sell"
+        android:id="@+id/employee_text_title2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="40dp"
-        android:background="@drawable/login_btn"
-        android:enabled="false"
-        android:text="@string/context_buy"
+        android:text="@string/Sale"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/employee_text_title"
+        app:layout_constraintEnd_toEndOf="@+id/employee_text_title"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="@+id/employee_text_title"
+        app:layout_constraintTop_toTopOf="@+id/employee_text_title"
+        app:layout_constraintVertical_bias="0.6" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cod_producto"
         android:textColor="@color/color_text"
-        android:textSize="24sp"
+        android:textSize="20sp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/employee_text_cod"
+        app:layout_constraintEnd_toEndOf="@+id/employee_text_cod"
+        app:layout_constraintStart_toStartOf="@+id/employee_text_cod"
+        app:layout_constraintTop_toTopOf="@+id/employee_text_cod" />
+
+    <ImageView
+        android:id="@+id/employee_img_search"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="@+id/employee_text_cod"
+        app:layout_constraintHorizontal_bias="0.069"
+        app:layout_constraintStart_toStartOf="@+id/employee_text_cod"
+        app:layout_constraintTop_toTopOf="@+id/employee_text_cod"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/lupa"
+        android:contentDescription="@string/contentDescription" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sale_Employee_recyclerView_list" />
+        app:layout_constraintHorizontal_bias="0.627"
+        app:layout_constraintStart_toEndOf="@+id/employee_text_cod"
+        app:layout_constraintTop_toBottomOf="@+id/employee_text_title"
+        app:layout_constraintVertical_bias="0.068"
+        app:srcCompat="@drawable/cod_barras"
+        android:contentDescription="@string/cb" />
+
+    <TextView
+        android:id="@+id/employee_text_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/description"
+        android:textSize="20sp"
+        android:textColor="@color/color_text"
+        app:layout_constraintBottom_toBottomOf="@+id/employee_text_description"
+        app:layout_constraintEnd_toEndOf="@+id/employee_text_description"
+        app:layout_constraintStart_toStartOf="@+id/employee_text_description"
+        app:layout_constraintTop_toTopOf="@+id/employee_text_description" />
+
+    <TextView
+        android:id="@+id/employee_text_amountProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/amount"
+        android:textColor="@color/color_text"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/employee_text_amounts"
+        app:layout_constraintEnd_toEndOf="@+id/employee_text_amounts"
+        app:layout_constraintStart_toEndOf="@+id/employee_text_description"
+        app:layout_constraintTop_toTopOf="@+id/employee_text_amounts" />
+
+    <ImageView
+        android:id="@+id/employee_img_down"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/employee_text_isdown"
+        app:layout_constraintEnd_toStartOf="@+id/employee_text_isup"
+        app:layout_constraintStart_toStartOf="@+id/employee_text_isdown"
+        app:layout_constraintTop_toTopOf="@+id/employee_text_isdown"
+        app:srcCompat="@drawable/abajo"
+        android:contentDescription="@string/arrow_down" />
+
+    <ImageView
+        android:id="@+id/employee_img_up"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/employee_text_isup"
+        app:layout_constraintEnd_toEndOf="@+id/employee_text_isup"
+        app:layout_constraintStart_toEndOf="@+id/employee_text_isdown"
+        app:layout_constraintTop_toTopOf="@+id/employee_text_isup"
+        app:srcCompat="@drawable/arriba"
+        android:contentDescription="@string/up" />
+
+    <TextView
+        android:id="@+id/employee_text_carryProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/carry"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/employee_text_carry"
+        app:layout_constraintEnd_toEndOf="@+id/employee_text_carry"
+        app:layout_constraintStart_toStartOf="@+id/employee_text_carry"
+        app:layout_constraintTop_toTopOf="@+id/employee_text_carry" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/employee_rv_products"
+        android:layout_width="412dp"
+        android:layout_height="251dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/employee_text_carry"
+        app:layout_constraintVertical_bias="0.136" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/finish"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/employee_text_finish"
+        app:layout_constraintEnd_toEndOf="@+id/employee_text_finish"
+        app:layout_constraintStart_toStartOf="@+id/employee_text_finish"
+        app:layout_constraintTop_toTopOf="@+id/employee_text_finish" />
+
+    <TextView
+        android:id="@+id/employee_text_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/total"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/employee_text_finish"
+        app:layout_constraintTop_toBottomOf="@+id/employee_rv_products" />
 </androidx.constraintlayout.widget.ConstraintLayout>
