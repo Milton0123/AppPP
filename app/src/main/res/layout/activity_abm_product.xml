@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background"
+    tools:context=".ui.AbmProductActivity">
+
+    <ImageView
+        android:id="@+id/crud_product_iv_back"
+        android:layout_width="30dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:contentDescription="@string/arrow_back"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back_arrow" />
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:text="@string/Product"
+        android:textColor="@color/color_text"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@id/crud_product_lnl_recycler_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/crud_product_lnl_recycler_search"
+        android:layout_width="308dp"
+        android:layout_height="492dp"
+        android:layout_marginTop="130dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/crud_ed_id_product"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:autofillHints="id"
+                android:hint="@string/id_product"
+                android:inputType="number"
+                android:paddingStart="10dp"
+                android:paddingEnd="0dp"
+                android:textColor="@color/color_text" />
+
+            <ImageView
+                android:id="@+id/crud_iv_search"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="5dp"
+                android:layout_weight="0.8"
+                android:background="@drawable/icon_find"
+                android:contentDescription="@string/icon_find" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/crud_rv_product"
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_rv_azul" />
+
+        <EditText
+            android:id="@+id/crud_et_id_barcode"
+            android:layout_width="match_parent"
+            android:layout_height="53dp"
+            android:layout_margin="5dp"
+            android:autofillHints="id"
+            android:hint="@string/id_barcode"
+            android:inputType="number"
+            android:textColor="@color/color_text"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/crud_et_name_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:autofillHints="name product"
+            android:hint="@string/name_product"
+            android:inputType="text"
+            android:textColor="@color/color_text"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/crud_et_price_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:autofillHints="price product"
+            android:hint="@string/price_product"
+            android:inputType="number"
+            android:textColor="@color/color_text"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/crud_et_quantity_product"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:autofillHints="quantity"
+            android:hint="@string/quantity"
+            android:inputType="number"
+            android:textColor="@color/color_text"
+            android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/crud_product_lnl_recycler_search">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/crud_bt_add"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/radius_bg_green"
+            android:text="@string/bt_add_product"
+            android:textColor="@color/color_text"
+            android:textSize="15sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/crud_bt_remove"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/radius_bg_red"
+            android:text="@string/bt_remove_product"
+            android:textColor="@color/txt_color_gray"
+            android:textSize="15sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/crud_bt_modify"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/radius_bg_yelow"
+            android:enabled="false"
+            android:text="@string/bt_modify_product"
+            android:textColor="@color/txt_color_gray"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

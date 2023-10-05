@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bc_login"
+    tools:context=".ui.LoginActivity">
+
+
+
+        <ImageView
+            android:id="@+id/login_icon"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:scaleType="fitXY"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/ic_tamini"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <EditText
+        android:id="@+id/login_text_user"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginRight="42dp"
+        android:autofillHints="user"
+        android:hint="@string/in_user"
+        android:inputType="text"
+        android:maxLength="20"
+        android:textColor="@color/color_text"
+        android:textSize="24sp"
+        android:paddingHorizontal="20dp"
+        android:background="@drawable/bc_brown_radius_250"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_icon" />
+
+    <EditText
+        android:id="@+id/login_text_password"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginRight="42dp"
+        android:autofillHints="password"
+        android:hint="@string/in_password"
+        android:maxLength="20"
+        android:maxLines="1"
+        android:lines="1"
+        android:inputType="textPassword"
+        android:textColor="@color/color_text"
+        android:textSize="24sp"
+        android:paddingHorizontal="20dp"
+        android:background="@drawable/bc_brown_radius_250"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_text_user" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/login_btn_redirect"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="42dp"
+        android:background="@drawable/login_btn"
+        android:enabled="true"
+        android:text="@string/context_add"
+        android:textAlignment="center"
+        android:textColor="@color/color_text"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_text_password" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

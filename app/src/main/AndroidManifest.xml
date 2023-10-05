@@ -14,8 +14,36 @@
         android:theme="@style/Theme.AppPP"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".ui.NewsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.SplashLogin"
+            android:exported="false" />
+        <activity
+            android:name=".ui.AbmProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.SalesEmployeeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.StockAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.SaleAdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.StockActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.AdminActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.EmployeeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.LoginActivity"
+            android:exported="true"
+            android:theme="@style/Theme.SplashStart">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
