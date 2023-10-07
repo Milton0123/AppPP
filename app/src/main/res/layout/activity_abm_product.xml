@@ -8,7 +8,7 @@
     tools:context=".ui.AbmProductActivity">
 
     <ImageView
-        android:id="@+id/crud_product_iv_back"
+        android:id="@+id/abm_product_iv_back"
         android:layout_width="30dp"
         android:layout_height="35dp"
         android:layout_marginStart="10dp"
@@ -18,147 +18,304 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_back_arrow" />
 
-    <TextView
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:text="@string/Product"
-        android:textColor="@color/color_text"
-        android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@id/crud_product_lnl_recycler_search"
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/abm_text_title"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/radius_btn"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.594"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/abm_text_title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_abm"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/abm_text_title"
+        app:layout_constraintEnd_toEndOf="@+id/abm_text_title"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="@+id/abm_text_title"
+        app:layout_constraintTop_toTopOf="@+id/abm_text_title"
+        app:layout_constraintVertical_bias="0.6" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/abm_text_cp"
+        android:layout_width="350dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/radius_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.594"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/abm_img_search"
+        android:layout_width="30dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="@string/arrow_back"
+        app:layout_constraintStart_toStartOf="@+id/abm_text_cp"
+        app:layout_constraintTop_toTopOf="@+id/abm_text_cp"
+        app:srcCompat="@drawable/lupa" />
+
+    <TextView
+        android:id="@+id/abm_text_productcp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/product_abm"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/abm_text_cp"
+        app:layout_constraintEnd_toEndOf="@+id/abm_text_cp"
+        app:layout_constraintHorizontal_bias="0.55"
+        app:layout_constraintStart_toStartOf="@+id/abm_text_cp"
+        app:layout_constraintTop_toTopOf="@+id/abm_text_cp"
+        app:layout_constraintVertical_bias="0.307" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/abm_rv_products"
+        android:layout_width="412dp"
+        android:layout_height="251dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/abm_text_insertbc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/abm_text_cp"
+        app:layout_constraintVertical_bias="0.136" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/abm_text_insertbc"
+        android:layout_width="290dp"
+        android:layout_height="35dp"
+        android:background="@drawable/radius_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.231"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.622" />
+
+    <TextView
+        android:id="@+id/abm_text_codebar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/codebar"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBaseline_toTopOf=""
+        app:layout_constraintBottom_toBottomOf="@+id/abm_text_insertbc"
+        app:layout_constraintEnd_toEndOf="@+id/abm_text_insertbc"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="@+id/abm_text_insertbc"
+        app:layout_constraintTop_toTopOf="@+id/abm_text_insertbc"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/abm_img_cb"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        android:contentDescription="@string/insertbc"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintStart_toEndOf="@+id/abm_text_insertbc"
+        app:layout_constraintTop_toBottomOf="@+id/abm_rv_products"
+        app:layout_constraintVertical_bias="0.06"
+        app:srcCompat="@drawable/cod_barras" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/abm_text_productname"
+        android:layout_width="290dp"
+        android:layout_height="35dp"
+        android:background="@drawable/radius_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.231"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/abm_text_insertbc"
+        app:layout_constraintVertical_bias="0.205" />
+
+    <TextView
+        android:id="@+id/abm_text_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nameproduct"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBaseline_toTopOf=""
+        app:layout_constraintBottom_toBottomOf="@+id/abm_text_productname"
+        app:layout_constraintEnd_toEndOf="@+id/abm_text_productname"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="@+id/abm_text_productname"
+        app:layout_constraintTop_toTopOf="@+id/abm_text_productname"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/abm_text_quantity"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:background="@drawable/radius_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/abm_text_insertbc"
+        app:layout_constraintVertical_bias="0.205" />
+
+    <TextView
+        android:id="@+id/abm_text_quantitytext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/amount"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBaseline_toTopOf=""
+        app:layout_constraintBottom_toBottomOf="@+id/abm_text_quantity"
+        app:layout_constraintEnd_toEndOf="@+id/abm_text_quantity"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="@+id/abm_text_quantity"
+        app:layout_constraintTop_toTopOf="@+id/abm_text_quantity"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/abm_text_description"
+        android:layout_width="290dp"
+        android:layout_height="80dp"
+        android:background="@drawable/radius_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.231"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/abm_text_productname"
+        app:layout_constraintVertical_bias="0.359" />
+
+    <TextView
+        android:id="@+id/abm_text_namedescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/productdescription"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBaseline_toTopOf=""
+        app:layout_constraintBottom_toBottomOf="@+id/abm_text_description"
+        app:layout_constraintEnd_toEndOf="@+id/abm_text_description"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="@+id/abm_text_description"
+        app:layout_constraintTop_toTopOf="@+id/abm_text_description"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/abm_text_more"
+        android:layout_width="50dp"
+        android:layout_height="35dp"
+        android:background="@drawable/radius_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.88"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/abm_text_description"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/abm_text_less"
+        android:layout_width="50dp"
+        android:layout_height="35dp"
+        android:background="@drawable/radius_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/abm_text_description"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/abm_img_down"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:contentDescription="@string/arrow_down"
+        app:layout_constraintBottom_toBottomOf="@+id/abm_text_more"
+        app:layout_constraintEnd_toStartOf="@+id/abm_text_less"
+        app:layout_constraintStart_toStartOf="@+id/abm_text_more"
+        app:layout_constraintTop_toTopOf="@+id/abm_text_more"
+        app:srcCompat="@drawable/abajo" />
+
+    <ImageView
+        android:id="@+id/abm_img_up"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:contentDescription="@string/up"
+        app:layout_constraintBottom_toBottomOf="@+id/abm_text_less"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/abm_text_more"
+        app:layout_constraintTop_toTopOf="@+id/abm_text_less"
+        app:srcCompat="@drawable/arriba" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/abm_text_price"
+        android:layout_width="80dp"
+        android:layout_height="35dp"
+        android:layout_marginBottom="104dp"
+        android:background="@drawable/radius_btn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.978"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <LinearLayout
-        android:id="@+id/crud_product_lnl_recycler_search"
-        android:layout_width="308dp"
-        android:layout_height="492dp"
-        android:layout_marginTop="130dp"
-        android:orientation="vertical"
+    <TextView
+        android:id="@+id/abm_text_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/price"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBaseline_toTopOf=""
+        app:layout_constraintBottom_toBottomOf="@+id/abm_text_price"
+        app:layout_constraintEnd_toEndOf="@+id/abm_text_price"
+        app:layout_constraintHorizontal_bias="0.525"
+        app:layout_constraintStart_toStartOf="@+id/abm_text_price"
+        app:layout_constraintTop_toTopOf="@+id/abm_text_price"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/abm_img_add"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:srcCompat="@drawable/mas" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/crud_ed_id_product"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="4"
-                android:autofillHints="id"
-                android:hint="@string/id_product"
-                android:inputType="number"
-                android:paddingStart="10dp"
-                android:paddingEnd="0dp"
-                android:textColor="@color/color_text" />
-
-            <ImageView
-                android:id="@+id/crud_iv_search"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:layout_weight="0.8"
-                android:background="@drawable/icon_find"
-                android:contentDescription="@string/icon_find" />
-        </LinearLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/crud_rv_product"
-            android:layout_width="match_parent"
-            android:layout_height="170dp"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            tools:listitem="@layout/item_rv_azul" />
-
-        <EditText
-            android:id="@+id/crud_et_id_barcode"
-            android:layout_width="match_parent"
-            android:layout_height="53dp"
-            android:layout_margin="5dp"
-            android:autofillHints="id"
-            android:hint="@string/id_barcode"
-            android:inputType="number"
-            android:textColor="@color/color_text"
-            android:textSize="24sp" />
-
-        <EditText
-            android:id="@+id/crud_et_name_product"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:autofillHints="name product"
-            android:hint="@string/name_product"
-            android:inputType="text"
-            android:textColor="@color/color_text"
-            android:textSize="24sp" />
-
-        <EditText
-            android:id="@+id/crud_et_price_product"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:autofillHints="price product"
-            android:hint="@string/price_product"
-            android:inputType="number"
-            android:textColor="@color/color_text"
-            android:textSize="24sp" />
-
-        <EditText
-            android:id="@+id/crud_et_quantity_product"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:autofillHints="quantity"
-            android:hint="@string/quantity"
-            android:inputType="number"
-            android:textColor="@color/color_text"
-            android:textSize="24sp" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="300dp"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
+    <ImageView
+        android:id="@+id/abm_img_modify"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/crud_product_lnl_recycler_search">
+        app:srcCompat="@drawable/lapiz" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/crud_bt_add"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/radius_bg_green"
-            android:text="@string/bt_add_product"
-            android:textColor="@color/color_text"
-            android:textSize="15sp" />
+    <ImageView
+        android:id="@+id/abm_img_delete"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.875"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/eliminar" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/crud_bt_remove"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/radius_bg_red"
-            android:text="@string/bt_remove_product"
-            android:textColor="@color/txt_color_gray"
-            android:textSize="15sp" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/crud_bt_modify"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@drawable/radius_bg_yelow"
-            android:enabled="false"
-            android:text="@string/bt_modify_product"
-            android:textColor="@color/txt_color_gray"
-            android:textSize="15sp" />
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

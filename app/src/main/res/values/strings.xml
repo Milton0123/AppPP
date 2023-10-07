@@ -45,4 +45,11 @@
     <string name="carry">Cargar</string>
     <string name="finish">Finalizar</string>
     <string name="total">Total:</string>
+    <string name="title_abm">Productos</string>
+    <string name="product_abm">Codigo de producto</string>
+    <string name="insertbc">Ingrese codigo de barras</string>
+    <string name="codebar">Ingrese codigo de barras</string>
+    <string name="nameproduct">Nombre del producto</string>
+    <string name="productdescription">Ingrese una descripción</string>
+    <string name="price">$0</string>
 </resources>
