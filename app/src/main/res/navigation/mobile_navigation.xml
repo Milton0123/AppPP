@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_news">
+
+    <fragment
+        android:id="@+id/nav_news"
+        android:name="com.example.emsolution.ui.news.NewsFragment"
+        android:label="@string/menu_news"
+        tools:layout="@layout/fragment_news" />
+
+    <fragment
+        android:id="@+id/nav_sell"
+        android:name="com.example.emsolution.ui.sell.SellFragment"
+        android:label="@string/menu_sell"
+        tools:layout="@layout/fragment_sell" />
+
+    <fragment
+        android:id="@+id/nav_see_stock"
+        android:name="com.example.emsolution.ui.see_stock.SeeStockFragment"
+        android:label="@string/menu_see_stock"
+        tools:layout="@layout/fragment_see_stock" />
+
+    <fragment
+        android:id="@+id/nav_about_us"
+        android:name="com.example.emsolution.ui.about_us.AboutUsFragment"
+        android:label="@string/menu_about_us"
+        tools:layout="@layout/fragment_about_us" />
+    <fragment
+        android:id="@+id/nav_crud_stock_fr"
+        android:name="com.example.emsolution.ui.crudstock.CrudStockFragment"
+        android:label="@string/menu_crud_stock"
+        tools:layout="@layout/fragment_crud_stock" />
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.example.emsolution.ui.logout.LogoutFragment"
+        android:label="@string/menu_logout"
+        tools:layout="@layout/fragment_logout" />
+</navigation>

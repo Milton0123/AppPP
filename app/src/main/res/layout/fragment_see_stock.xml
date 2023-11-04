@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/color_background"
+    android:layout_height="match_parent"
+    tools:context=".ui.see_stock.SeeStockFragment">
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/stock_admin_title_stock"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/radius_btn"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.967" />
+    <ImageView
+        android:id="@+id/stock_admin_img_find"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="4dp"
+        android:elevation="2dp"
+        app:layout_constraintEnd_toEndOf="@+id/stock_admin_title_stock"
+        app:layout_constraintHorizontal_bias="0.078"
+        app:layout_constraintStart_toStartOf="@+id/stock_admin_title_stock"
+        app:layout_constraintTop_toTopOf="@+id/stock_admin_title_stock"
+        app:srcCompat="@drawable/ic_find" />
+    <TextView
+        android:id="@+id/stock_admin_text_title_cp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/cod_producto"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/stock_admin_title_stock"
+        app:layout_constraintHorizontal_bias="0.781"
+        app:layout_constraintStart_toStartOf="@+id/stock_admin_title_stock"
+        app:layout_constraintTop_toTopOf="@+id/stock_admin_title_stock" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/stock_admin_recyclerView_all_products"
+        android:layout_width="match_parent"
+        android:layout_height="520dp"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/stock_admin_text_title_cp"
+        tools:listitem="@layout/item_rv_see_stock" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

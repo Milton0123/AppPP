@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "706304735438",
+    "firebase_url": "https://emsolution-c8690-default-rtdb.firebaseio.com",
+    "project_id": "emsolution-c8690",
+    "storage_bucket": "emsolution-c8690.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:706304735438:android:6a0f1ddf6ad9e7a521f89f",
+        "android_client_info": {
+          "package_name": "com.example.emsolution"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "706304735438-61bhtdjj6ggsl3kask27j6e4fpjqcsre.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSc0ZIkF8JNOlv8MAVXAZxLPycxN8Y6-E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "706304735438-61bhtdjj6ggsl3kask27j6e4fpjqcsre.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:706304735438:android:c87f0935d9d5d72821f89f",
+        "android_client_info": {
+          "package_name": "login.firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "706304735438-61bhtdjj6ggsl3kask27j6e4fpjqcsre.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSc0ZIkF8JNOlv8MAVXAZxLPycxN8Y6-E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "706304735438-61bhtdjj6ggsl3kask27j6e4fpjqcsre.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

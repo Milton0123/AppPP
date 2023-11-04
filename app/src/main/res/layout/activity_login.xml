@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bc_login"
+    tools:context=".ui.login.LoginActivity">
+
+    <ImageView
+        android:id="@+id/login_icon"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="80dp"
+        android:background="@drawable/ic_tamini"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <EditText
+        android:id="@+id/login_text_email"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginRight="42dp"
+        android:autofillHints="user"
+        android:background="@drawable/bc_brown_radius_250"
+        android:hint="@string/in_email"
+        android:inputType="textEmailAddress"
+        android:maxLength="30"
+        android:paddingHorizontal="20dp"
+        android:textColor="@color/color_text"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_icon" />
+
+    <EditText
+        android:id="@+id/login_text_password"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="42dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginRight="42dp"
+        android:autofillHints="password"
+        android:background="@drawable/bc_brown_radius_250"
+        android:hint="@string/in_password"
+        android:inputType="textPassword"
+        android:lines="1"
+        android:maxLength="30"
+        android:maxLines="1"
+        android:paddingHorizontal="20dp"
+        android:textColor="@color/color_text"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_text_email" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/login_btn_log_in"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/login_btn"
+        android:enabled="false"
+        android:text="@string/context_log_in"
+        android:textAlignment="center"
+        android:textColor="@color/color_text"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toStartOf="@id/login_btn_check_in"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_text_password" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/login_btn_check_in"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/login_btn"
+        android:enabled="false"
+        android:text="@string/context_check_in"
+        android:textAlignment="center"
+        android:textColor="@color/color_text"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/login_btn_log_in"
+        app:layout_constraintTop_toBottomOf="@+id/login_text_password" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#A4FFFFFF"
+        android:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

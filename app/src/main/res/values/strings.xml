@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">EMsolution</string>
+    <string name="in_email">Email</string>
+    <string name="in_password">Contraseña</string>
+    <string name="context_log_in">Loguearse</string>
+    <string name="context_check_in">Registrarse</string>
+    <string name="title_activity_home_admin">HomeAdminActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="arrow_back">button arrow back</string>
+    <string name="Sale">Ventas</string>
+    <string name="cod_product">Codigo de producto</string>
+    <string name="description_product">Producto</string>
+    <string name="amount">0</string>
+    <string name="arrow_down">bajar</string>
+    <string name="carry">Cargar</string>
+    <string name="finish">Finalizar</string>
+    <string name="total">Total:</string>
+
+
+    <string name="menu_sell">VENTAS</string>
+    <string name="menu_see_stock">VER STOCK</string>
+    <string name="menu_crud_stock">CRUD STOCK</string>
+    <string name="menu_about_us">SOBRE NOSOTROS</string>
+    <string name="menu_logout">CARRAR SESION</string>
+    <string name="news_description">¡Ultima Novedad!</string>
+    <string name="menu_news">NOVEDADES</string>
+    <string name="cod_producto">Codigo de producto</string>
+    <string name="about_us_tv_title">example description EMsolution</string>
+    <string name="about_us_tv_descrition">ejemplo de descripcion en sobre nosotros, ejemplo de descripcion en sobre nosotros, ejemplo de descripcion en sobre nosotros</string>
+    <string name="about_us_copyright">Derechos de autor © 2023 EM solution. Todos los derechos reservados.</string>
+    <string name="select_product">Seleccionar el producto a editar</string>
+    <string name="title_product">titulo del producto</string>
+    <string name="description_product_crud">descripcion del producto</string>
+    <string name="amount_product">cantidad:</string>
+    <string name="price_product">precio</string>
+    <string name="sign_price">$</string>
+    <string name="add_barcode">codigo de barras</string>
+    <string name="add_name">nombre del producto</string>
+    <string name="add_description">descripcion del producto</string>
+    <string name="add_price">$0000</string>
+    <string name="add_amount">cantidad</string>
+</resources>

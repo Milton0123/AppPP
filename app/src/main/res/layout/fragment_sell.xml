@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background"
+    tools:context=".ui.sell.SellFragment">
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/admin_text_description"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="208dp"
+        android:background="@drawable/radius_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.072"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/admin_text_carry"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="340dp"
+        android:background="@drawable/radius_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.945"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/admin_text_finish"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="668dp"
+        android:background="@drawable/radius_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.075"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/admin_text_amounts"
+        android:layout_width="100dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="208dp"
+        android:background="@drawable/radius_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.981"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/admin_text_isup"
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="272dp"
+        android:background="@drawable/radius_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.99"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/admin_text_isdown"
+        android:layout_width="50dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="272dp"
+        android:background="@drawable/radius_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.875"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/admin_text_title"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/radius_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.594"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/admin_text_cod"
+        android:layout_width="300dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="96dp"
+        android:background="@drawable/radius_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.076"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/admin_text_title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Sale"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/admin_text_title"
+        app:layout_constraintEnd_toEndOf="@+id/admin_text_title"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="@+id/admin_text_title"
+        app:layout_constraintTop_toTopOf="@+id/admin_text_title"
+        app:layout_constraintVertical_bias="0.6" />
+
+    <TextView
+        android:id="@+id/admin_text_cp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cod_product"
+        android:textColor="@color/color_text"
+        android:textSize="20sp"
+        android:layout_marginStart="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/admin_text_cod"
+        app:layout_constraintEnd_toEndOf="@+id/admin_text_cod"
+        app:layout_constraintStart_toStartOf="@+id/admin_text_cod"
+        app:layout_constraintTop_toTopOf="@+id/admin_text_cod" />
+
+    <ImageView
+        android:id="@+id/admin_img_search"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="@+id/admin_text_cp"
+        app:layout_constraintEnd_toEndOf="@+id/admin_text_cod"
+        app:layout_constraintHorizontal_bias="0.069"
+        app:layout_constraintStart_toStartOf="@+id/admin_text_cod"
+        app:layout_constraintTop_toTopOf="@+id/admin_text_cod"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_find" />
+
+    <ImageView
+        android:id="@+id/admin_img_cb"
+        android:layout_width="60dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.627"
+        app:layout_constraintStart_toEndOf="@+id/admin_text_cod"
+        app:layout_constraintTop_toBottomOf="@+id/admin_text_title"
+        app:layout_constraintVertical_bias="0.068"
+        app:srcCompat="@drawable/ic_cod_barcode" />
+
+    <TextView
+        android:id="@+id/admin_text_product"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/description_product"
+        android:textSize="20sp"
+        android:textColor="@color/color_text"
+        app:layout_constraintBottom_toBottomOf="@+id/admin_text_description"
+        app:layout_constraintEnd_toEndOf="@+id/admin_text_description"
+        app:layout_constraintStart_toStartOf="@+id/admin_text_description"
+        app:layout_constraintTop_toTopOf="@+id/admin_text_description" />
+
+    <TextView
+        android:id="@+id/admin_text_amountProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/amount"
+        android:textColor="@color/color_text"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/admin_text_amounts"
+        app:layout_constraintEnd_toEndOf="@+id/admin_text_amounts"
+        app:layout_constraintStart_toEndOf="@+id/admin_text_description"
+        app:layout_constraintTop_toTopOf="@+id/admin_text_amounts" />
+
+    <ImageView
+        android:id="@+id/admin_img_down"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/admin_text_isdown"
+        app:layout_constraintEnd_toStartOf="@+id/admin_text_isup"
+        app:layout_constraintStart_toStartOf="@+id/admin_text_isdown"
+        app:layout_constraintTop_toTopOf="@+id/admin_text_isdown"
+        app:srcCompat="@drawable/edit_down"
+        android:contentDescription="@string/arrow_down" />
+
+    <ImageView
+        android:id="@+id/admin_img_up"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/admin_text_isup"
+        app:layout_constraintEnd_toEndOf="@+id/admin_text_isup"
+        app:layout_constraintStart_toEndOf="@+id/admin_text_isdown"
+        app:layout_constraintTop_toTopOf="@+id/admin_text_isup"
+        app:srcCompat="@drawable/ic_arrow_up"/>
+
+    <TextView
+        android:id="@+id/admin_text_carryProduct"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/carry"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/admin_text_carry"
+        app:layout_constraintEnd_toEndOf="@+id/admin_text_carry"
+        app:layout_constraintStart_toStartOf="@+id/admin_text_carry"
+        app:layout_constraintTop_toTopOf="@+id/admin_text_carry" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/admin_rv_products"
+        android:layout_width="400dp"
+        android:layout_height="251dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/admin_text_carry"
+        app:layout_constraintVertical_bias="0.136" />
+
+    <TextView
+        android:id="@+id/admin_text_fin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/finish"
+        android:textSize="25sp"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/admin_text_finish"
+        app:layout_constraintEnd_toEndOf="@+id/admin_text_finish"
+        app:layout_constraintStart_toStartOf="@+id/admin_text_finish"
+        app:layout_constraintTop_toTopOf="@+id/admin_text_finish" />
+
+    <TextView
+        android:id="@+id/admin_text_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/total"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/admin_text_finish"
+        app:layout_constraintTop_toBottomOf="@+id/admin_rv_products" />
+</androidx.constraintlayout.widget.ConstraintLayout>
