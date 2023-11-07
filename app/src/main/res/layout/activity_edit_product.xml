@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/color_background"
-    tools:context=".ui.EditProductActivity">
+    tools:context=".ui.edit.EditProductActivity">
 
     <ImageView
         android:id="@+id/edit_product_iv_back"
@@ -18,11 +18,11 @@
         app:srcCompat="@drawable/ic_back_arrow" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_0_16"
+        android:id="@+id/guideline_0_1"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.16" />
+        app:layout_constraintGuide_percent="0.1" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/edit_product_cv_image"
@@ -31,13 +31,14 @@
         app:cardCornerRadius="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline_0_16">
+        app:layout_constraintTop_toTopOf="@+id/guideline_0_1">
 
         <ImageView
             android:id="@+id/edit_product_iv_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/black" />
+            android:background="@color/black"
+            android:scaleType="fitXY"/>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -60,12 +61,24 @@
 
     <LinearLayout
         android:layout_width="300dp"
-        android:layout_height="250dp"
+        android:layout_height="350dp"
         android:layout_marginTop="20dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edit_product_cv_image">
+        <TextView
+            android:id="@+id/edit_product_name_collection"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginVertical="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/radius_btn"
+            android:gravity="center"
+            android:text="@string/add_name_collection"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/edit_product_et_barcode"
@@ -78,7 +91,8 @@
             android:hint="@string/add_barcode"
             android:textAlignment="center"
             android:textColorHint="@color/white"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:inputType="number" />
 
         <EditText
             android:id="@+id/edit_product_et_name_product"
@@ -91,7 +105,8 @@
             android:hint="@string/add_name"
             android:textAlignment="center"
             android:textColorHint="@color/white"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:inputType="text"/>
 
         <EditText
             android:id="@+id/edit_product_et_description"
@@ -124,7 +139,8 @@
                 android:hint="@string/add_amount"
                 android:textAlignment="center"
                 android:textColorHint="@color/white"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:inputType="number"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/edit_product_bt_arrow_down"
@@ -135,7 +151,6 @@
                 android:gravity="center"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textColorHint="@color/white"
                 android:textSize="20sp" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -146,7 +161,6 @@
                 android:background="@drawable/edit_up"
                 android:gravity="center"
                 android:textAlignment="center"
-                android:textColor="@color/white"
                 android:textSize="20sp" />
         </LinearLayout>
 
@@ -162,6 +176,21 @@
             android:hint="@string/add_price"
             android:textAlignment="center"
             android:textColorHint="@color/white"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:drawableStart="@drawable/ic_price"
+            android:paddingHorizontal="5dp"
+            android:inputType="number"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/edit_product_bt_save"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/radius_btn"
+            android:gravity="center"
+            android:text="@string/save_changes"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

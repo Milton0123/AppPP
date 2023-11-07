@@ -1,10 +1,10 @@
-package com.example.emsolution.ui.crudstock
+package com.example.emsolution.ui.edit
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 
-class CrudStockViewModelFactory : ViewModelProvider.Factory {
+class EditProductViewModelFactory : ViewModelProvider.Factory{
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        return CrudStockViewModel() as T
+        return EditProductViewModel() as T
     }
 }

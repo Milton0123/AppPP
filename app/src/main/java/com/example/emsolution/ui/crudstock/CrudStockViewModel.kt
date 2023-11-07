@@ -1,5 +1,6 @@
 package com.example.emsolution.ui.crudstock
 
+import android.net.Uri
 import androidx.lifecycle.ViewModel
 import com.example.emsolution.back.ProductData
 import com.google.firebase.firestore.FirebaseFirestore
@@ -14,6 +15,7 @@ class CrudStockViewModel : ViewModel() {
                     val productList = mutableListOf<ProductData>()
 
                     for (document in querySnapShot) {
+                        val productBarcode = document.getLong("barcode")
                         val productImage = document.getString("imagen")
                         val productTitle = document.getString("titulo")
                         val productDescription = document.getString("descripcion")
@@ -21,6 +23,7 @@ class CrudStockViewModel : ViewModel() {
                         val productPrice = document.getLong("precio")
 
                         val product = ProductData(
+                            productBarcode.toString().toInt(),
                             productImage.toString(),
                             productTitle.toString(),
                             productDescription.toString(),

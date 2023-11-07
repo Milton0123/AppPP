@@ -1,15 +1,20 @@
 package com.example.emsolution.ui.crudstock
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.app.ActivityCompat.requestPermissions
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.example.emsolution.databinding.FragmentCrudStockBinding
-import com.example.emsolution.ui.EditProductActivity
+import com.example.emsolution.ui.HomeAdminActivity
+import com.example.emsolution.ui.edit.EditProductActivity
 import com.google.firebase.FirebaseApp
 
 class CrudStockFragment : Fragment() {
@@ -31,6 +36,7 @@ class CrudStockFragment : Fragment() {
         initViewModel()
         onClicks()
         showProducts()
+
         val root: View = binding.root
         return root
     }
@@ -39,7 +45,9 @@ class CrudStockFragment : Fragment() {
     }
     private fun onClicks(){
         binding.crudStockBtPlus.setOnClickListener {
-            startActivity(Intent(activity, EditProductActivity::class.java))
+            val intent = Intent(activity, EditProductActivity::class.java)
+            intent.putExtra("selectFragment","addOption")
+            startActivity(intent)
         }
     }
     private fun showProducts(){
@@ -56,5 +64,6 @@ class CrudStockFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 
 }

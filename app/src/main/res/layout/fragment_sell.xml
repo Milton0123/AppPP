@@ -8,14 +8,17 @@
     tools:context=".ui.sell.SellFragment">
 
 
-    <androidx.appcompat.widget.AppCompatButton
+    <EditText
         android:id="@+id/admin_text_description"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="45dp"
         android:layout_marginTop="208dp"
         android:background="@drawable/radius_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.072"
+        android:hint="@string/description_product"
+        android:gravity="center"
+        android:textColorHint="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@id/admin_text_amounts"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,6 +27,10 @@
         android:layout_width="200dp"
         android:layout_height="45dp"
         android:layout_marginTop="340dp"
+        android:text="@string/carry"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textSize="20sp"
         android:background="@drawable/radius_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.945"
@@ -35,44 +42,53 @@
         android:layout_width="200dp"
         android:layout_height="45dp"
         android:layout_marginTop="668dp"
+        android:text="@string/finish"
+        android:textColor="@color/white"
+        android:textSize="20sp"
         android:background="@drawable/radius_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.075"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <EditText
         android:id="@+id/admin_text_amounts"
-        android:layout_width="100dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginTop="208dp"
+        android:hint="@string/amount_product"
+        android:gravity="center"
+        android:textColorHint="@color/white"
         android:background="@drawable/radius_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.981"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/sell_bt_arrow_up"
+        app:layout_constraintStart_toStartOf="@+id/sell_bt_arrow_down"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/admin_text_isup"
+        android:id="@+id/sell_bt_arrow_down"
         android:layout_width="50dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="272dp"
-        android:background="@drawable/radius_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.99"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="25dp"
+        android:background="@drawable/edit_down"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/admin_text_amounts"
+        app:layout_constraintEnd_toStartOf="@id/sell_bt_arrow_up"
+        android:layout_marginTop="10dp"/>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/admin_text_isdown"
+        android:id="@+id/sell_bt_arrow_up"
         android:layout_width="50dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="272dp"
-        android:background="@drawable/radius_btn"
+        android:layout_height="25dp"
+        android:background="@drawable/edit_up"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@+id/admin_text_amounts"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.875"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_margin="10dp"/>
 
     <View
         android:id="@+id/admin_text_title"
@@ -81,20 +97,33 @@
         android:layout_marginTop="8dp"
         android:background="@drawable/radius_btn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.594"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <EditText
         android:id="@+id/admin_text_cod"
         android:layout_width="300dp"
         android:layout_height="45dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="45dp"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:hint="@string/cod_product"
+        android:textColorHint="@color/white"
         android:background="@drawable/radius_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.076"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/admin_text_title" />
+
+    <ImageView
+        android:id="@+id/crud_stock_find_product"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/ic_find"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="@id/admin_text_cod"
+        app:layout_constraintBottom_toBottomOf="@id/admin_text_cod"
+        app:layout_constraintTop_toTopOf="@id/admin_text_cod" />
 
     <TextView
         android:id="@+id/admin_text_title2"
@@ -110,30 +139,8 @@
         app:layout_constraintTop_toTopOf="@+id/admin_text_title"
         app:layout_constraintVertical_bias="0.6" />
 
-    <TextView
-        android:id="@+id/admin_text_cp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/cod_product"
-        android:textColor="@color/color_text"
-        android:textSize="20sp"
-        android:layout_marginStart="40dp"
-        app:layout_constraintBottom_toBottomOf="@+id/admin_text_cod"
-        app:layout_constraintEnd_toEndOf="@+id/admin_text_cod"
-        app:layout_constraintStart_toStartOf="@+id/admin_text_cod"
-        app:layout_constraintTop_toTopOf="@+id/admin_text_cod" />
 
-    <ImageView
-        android:id="@+id/admin_img_search"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        app:layout_constraintBottom_toBottomOf="@+id/admin_text_cp"
-        app:layout_constraintEnd_toEndOf="@+id/admin_text_cod"
-        app:layout_constraintHorizontal_bias="0.069"
-        app:layout_constraintStart_toStartOf="@+id/admin_text_cod"
-        app:layout_constraintTop_toTopOf="@+id/admin_text_cod"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_find" />
+
 
     <ImageView
         android:id="@+id/admin_img_cb"
@@ -147,63 +154,6 @@
         app:layout_constraintVertical_bias="0.068"
         app:srcCompat="@drawable/ic_cod_barcode" />
 
-    <TextView
-        android:id="@+id/admin_text_product"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/description_product"
-        android:textSize="20sp"
-        android:textColor="@color/color_text"
-        app:layout_constraintBottom_toBottomOf="@+id/admin_text_description"
-        app:layout_constraintEnd_toEndOf="@+id/admin_text_description"
-        app:layout_constraintStart_toStartOf="@+id/admin_text_description"
-        app:layout_constraintTop_toTopOf="@+id/admin_text_description" />
-
-    <TextView
-        android:id="@+id/admin_text_amountProduct"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/amount"
-        android:textColor="@color/color_text"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="@+id/admin_text_amounts"
-        app:layout_constraintEnd_toEndOf="@+id/admin_text_amounts"
-        app:layout_constraintStart_toEndOf="@+id/admin_text_description"
-        app:layout_constraintTop_toTopOf="@+id/admin_text_amounts" />
-
-    <ImageView
-        android:id="@+id/admin_img_down"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        app:layout_constraintBottom_toBottomOf="@+id/admin_text_isdown"
-        app:layout_constraintEnd_toStartOf="@+id/admin_text_isup"
-        app:layout_constraintStart_toStartOf="@+id/admin_text_isdown"
-        app:layout_constraintTop_toTopOf="@+id/admin_text_isdown"
-        app:srcCompat="@drawable/edit_down"
-        android:contentDescription="@string/arrow_down" />
-
-    <ImageView
-        android:id="@+id/admin_img_up"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginEnd="12dp"
-        app:layout_constraintBottom_toBottomOf="@+id/admin_text_isup"
-        app:layout_constraintEnd_toEndOf="@+id/admin_text_isup"
-        app:layout_constraintStart_toEndOf="@+id/admin_text_isdown"
-        app:layout_constraintTop_toTopOf="@+id/admin_text_isup"
-        app:srcCompat="@drawable/ic_arrow_up"/>
-
-    <TextView
-        android:id="@+id/admin_text_carryProduct"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/carry"
-        android:textSize="25sp"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/admin_text_carry"
-        app:layout_constraintEnd_toEndOf="@+id/admin_text_carry"
-        app:layout_constraintStart_toStartOf="@+id/admin_text_carry"
-        app:layout_constraintTop_toTopOf="@+id/admin_text_carry" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/admin_rv_products"
@@ -217,26 +167,22 @@
         app:layout_constraintVertical_bias="0.136" />
 
     <TextView
-        android:id="@+id/admin_text_fin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/finish"
-        android:textSize="25sp"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/admin_text_finish"
-        app:layout_constraintEnd_toEndOf="@+id/admin_text_finish"
-        app:layout_constraintStart_toStartOf="@+id/admin_text_finish"
-        app:layout_constraintTop_toTopOf="@+id/admin_text_finish" />
-
-    <TextView
         android:id="@+id/admin_text_total"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/total"
         android:textColor="@color/white"
         android:textSize="20sp"
+        android:layout_marginStart="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/admin_text_finish"
         app:layout_constraintTop_toBottomOf="@+id/admin_rv_products" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/admin_text_total"
+        app:layout_constraintBottom_toBottomOf="@+id/admin_text_total"
+        android:layout_marginStart="20dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

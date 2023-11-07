@@ -36,12 +36,16 @@
     <string name="select_product">Seleccionar el producto a editar</string>
     <string name="title_product">titulo del producto</string>
     <string name="description_product_crud">descripcion del producto</string>
-    <string name="amount_product">cantidad:</string>
+    <string name="amount_product">cantidad</string>
     <string name="price_product">precio</string>
     <string name="sign_price">$</string>
     <string name="add_barcode">codigo de barras</string>
     <string name="add_name">nombre del producto</string>
     <string name="add_description">descripcion del producto</string>
-    <string name="add_price">$0000</string>
+    <string name="add_price">0000</string>
     <string name="add_amount">cantidad</string>
+    <string name="save_changes">guardar cambios</string>
+    <string name="add_name_collection">productosTextil</string>
+    <string name="cb_barcode">CB:</string>
+    <string name="ref_barcode">BARCODE</string>
 </resources>
