@@ -1,19 +1,14 @@
 package com.example.emsolution.ui.crudstock
 
-import android.Manifest
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.app.ActivityCompat
-import androidx.core.app.ActivityCompat.requestPermissions
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import com.example.emsolution.back.ProductData
 import com.example.emsolution.databinding.FragmentCrudStockBinding
-import com.example.emsolution.ui.HomeAdminActivity
 import com.example.emsolution.ui.edit.EditProductActivity
 import com.google.firebase.FirebaseApp
 
@@ -40,30 +35,60 @@ class CrudStockFragment : Fragment() {
         val root: View = binding.root
         return root
     }
-    private fun initViewModel(){
+
+    private fun initViewModel() {
         viewModel = CrudStockViewModelFactory().create(CrudStockViewModel::class.java)
     }
-    private fun onClicks(){
+
+    private fun onClicks() {
         binding.crudStockBtPlus.setOnClickListener {
             val intent = Intent(activity, EditProductActivity::class.java)
-            intent.putExtra("selectFragment","addOption")
+            intent.putExtra("selectFragment", "addOption")
             startActivity(intent)
         }
     }
-    private fun showProducts(){
+
+    private fun showProducts() {
         viewModel.getProduct(
             onSuccess = { productList ->
-                val adapter = CrudStockAdapter(productList)
+                val adapter = CrudStockAdapter(
+                    productList,
+                    itemUpdate = { goToUpdate(it) },
+                    itemTrash = { deleteProduct(it) })
                 binding.crudStockRv.adapter = adapter
             }
         ) { e ->
             Toast.makeText(requireContext(), e.toString(), Toast.LENGTH_SHORT).show()
         }
     }
+
+    fun goToUpdate(item: ProductData) {
+        val intent = Intent(activity, EditProductActivity()::class.java)
+        intent.putExtra("selectFragment", "updateOption")
+        ItemUpdate.myItemUpdate = item
+        startActivity(intent)
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
 
+    private fun deleteProduct(itemTrashBarcode: Int) {
+        viewModel.removeProduct(
+            itemTrashBarcode,
+            onSuccess = {
+                showProducts()
+            },
+            onFailure = {
+                Toast.makeText(requireContext(), it, Toast.LENGTH_SHORT).show()
+            }
+        )
+    }
 
 }
+
+object ItemUpdate {
+    var myItemUpdate: ProductData? = null
+}
+

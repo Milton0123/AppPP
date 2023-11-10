@@ -43,6 +43,8 @@ class HomeAdminActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        val hola = 0
     }
 
 

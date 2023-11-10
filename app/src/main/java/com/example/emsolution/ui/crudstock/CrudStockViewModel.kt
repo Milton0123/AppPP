@@ -1,14 +1,16 @@
 package com.example.emsolution.ui.crudstock
 
-import android.net.Uri
+
+import androidx.core.net.toUri
 import androidx.lifecycle.ViewModel
 import com.example.emsolution.back.ProductData
 import com.google.firebase.firestore.FirebaseFirestore
 
 class CrudStockViewModel : ViewModel() {
     val db = FirebaseFirestore.getInstance()
+    val nameCollecttion = "productosTextil"
     fun getProduct(onSuccess: (List<ProductData>) -> Unit, onFailure: (Any?) -> Unit) {
-        db.collection("productosTextil")
+        db.collection(nameCollecttion)
             .get()
             .addOnSuccessListener { querySnapShot ->
                 if (!querySnapShot.isEmpty) {
@@ -24,7 +26,7 @@ class CrudStockViewModel : ViewModel() {
 
                         val product = ProductData(
                             productBarcode.toString().toInt(),
-                            productImage.toString(),
+                            productImage.toString().toUri(),
                             productTitle.toString(),
                             productDescription.toString(),
                             productAmount.toString().toInt(),
@@ -38,5 +40,31 @@ class CrudStockViewModel : ViewModel() {
             .addOnFailureListener{ e ->
             onFailure(e)
         }
+    }
+
+    fun removeProduct(itemTrashBarcode : Int, onSuccess : () -> Unit, onFailure: (String) -> Any){
+        db.collection(nameCollecttion)
+            .whereEqualTo("barcode", itemTrashBarcode)
+            .get()
+            .addOnSuccessListener { querySnapshot ->
+                if (!querySnapshot.isEmpty) {
+                    val documentSnapshot = querySnapshot.documents[0]
+                    val nameDocumentEdit = documentSnapshot.id
+                    db.collection(nameCollecttion)
+                        .document(nameDocumentEdit)
+                        .delete()
+                        .addOnSuccessListener {
+                            onSuccess()
+                        }
+                        .addOnFailureListener { e ->
+                            onFailure("no se ha podido remover su producto, error: $e")
+                        }
+                }else{
+                    onFailure("No se encontró el producto con el barcode proporcionado.")
+                }
+            }
+            .addOnFailureListener{ e ->
+
+            }
     }
 }

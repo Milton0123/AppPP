@@ -19,7 +19,7 @@
     <string name="arrow_down">bajar</string>
     <string name="carry">Cargar</string>
     <string name="finish">Finalizar</string>
-    <string name="total">Total:</string>
+    <string name="total_price">Total: $</string>
 
 
     <string name="menu_sell">VENTAS</string>
@@ -48,4 +48,5 @@
     <string name="add_name_collection">productosTextil</string>
     <string name="cb_barcode">CB:</string>
     <string name="ref_barcode">BARCODE</string>
+    <string name="empty_price">0000</string>
 </resources>

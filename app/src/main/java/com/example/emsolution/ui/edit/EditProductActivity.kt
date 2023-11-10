@@ -13,13 +13,16 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.example.emsolution.databinding.ActivityEditProductBinding
 import com.example.emsolution.ui.HomeAdminActivity
+import com.example.emsolution.ui.crudstock.ItemUpdate
 import com.google.firebase.FirebaseApp
 
 class EditProductActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEditProductBinding
     private lateinit var viewModel: EditProductViewModel
-    private var imageUriEdit : Uri? = null
+    private var imageUriEdit: Uri? = null
     private lateinit var imagePicker: ActivityResultLauncher<Intent>
+    private var imageEdit = false
+    private var selectImageEdit: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,13 +40,13 @@ class EditProductActivity : AppCompatActivity() {
         viewModel = EditProductViewModelFactory().create(EditProductViewModel::class.java)
     }
 
-    private fun observer(){
-        viewModel.amountData.observe(this){
+    private fun observer() {
+        viewModel.amountData.observe(this) {
             initValues(it)
         }
     }
 
-    private fun initValues(amount : Int){
+    private fun initValues(amount: Int) {
         binding.editProductEtAmount.setText(amount.toString())
     }
 
@@ -61,20 +64,13 @@ class EditProductActivity : AppCompatActivity() {
         }
     }
 
-    fun updateOption() {
-        /*
-        viewModel.updateOption(
-            binding.editProductIvImage.toString(),
-            binding.editProductEtNameProduct.toString(),
-            binding.editProductEtDescription.toString(),
-            binding.editProductEtAmount.toString().toInt(),
-            binding.editProductEtPrice.toString().toInt(),
-            productIdBd = {},
-            onSuccess = {},
-            onError = {}
+    private fun updateOption() {
+        loadFieldUpdate()
+        viewModel.findNameDocument(
+            binding.editProductEtBarcode.text.toString().toInt(),
+            documentEdit = { saveUpdate(it) }
         )
 
-         */
     }
 
     private fun addOption() {
@@ -117,33 +113,36 @@ class EditProductActivity : AppCompatActivity() {
                     val data: Intent? = result.data
                     imageUriEdit = data?.data
                     binding.editProductIvImage.setImageURI(imageUriEdit)
+                    imageEdit = true
                 }
             }
     }
 
     fun onClick() {
-        binding.editProductIvBack.setOnClickListener{
+        binding.editProductIvBack.setOnClickListener {
             startActivity(Intent(this, HomeAdminActivity::class.java))
             finish()
         }
-        binding.editProductBtEditImage.setOnClickListener{
+        binding.editProductBtEditImage.setOnClickListener {
             val intent = Intent(Intent.ACTION_PICK)
             intent.type = "image/*"
             imagePicker.launch(intent)
         }
-        binding.editProductBtArrowUp.setOnClickListener{
+        binding.editProductBtArrowUp.setOnClickListener {
             val valueAmount = binding.editProductEtAmount.text.toString()
             val resultAmount = valueAmount.toIntOrNull() ?: 0
             viewModel.addAmount(
                 resultAmount,
-                amount = "mas")
+                amount = "mas"
+            )
         }
-        binding.editProductBtArrowDown.setOnClickListener{
+        binding.editProductBtArrowDown.setOnClickListener {
             val valueAmount = binding.editProductEtAmount.text.toString()
             val resultAmount = valueAmount.toIntOrNull() ?: 0
             viewModel.addAmount(
                 resultAmount,
-                amount = "menos")
+                amount = "menos"
+            )
         }
     }
 
@@ -156,4 +155,47 @@ class EditProductActivity : AppCompatActivity() {
         binding.editProductEtPrice.text.clear()
     }
 
+    private fun loadFieldUpdate() {
+        val updateDate = ItemUpdate.myItemUpdate
+        if (updateDate != null) {
+            binding.editProductIvImage.setImageURI(updateDate.image)
+            binding.editProductEtBarcode.setText(updateDate.barcode.toString())
+            binding.editProductEtBarcode.isEnabled = false
+            binding.editProductEtNameProduct.setText(updateDate.title)
+            binding.editProductEtDescription.setText(updateDate.description)
+            binding.editProductEtAmount.setText(updateDate.amount.toString())
+            binding.editProductEtPrice.setText(updateDate.price.toString())
+        }
+    }
+
+    fun saveUpdate(nameDocument: String) {
+        binding.editProductBtSave.setOnClickListener { updateFields(nameDocument) }
+    }
+
+    private fun updateFields(nameDocument: String) {
+        val updateData = ItemUpdate.myItemUpdate
+
+        if (updateData != null) {
+
+            if(!imageEdit){
+                selectImageEdit = updateData.image
+            }else{
+                selectImageEdit = imageUriEdit
+            }
+            viewModel.updateOption(
+                selectImageEdit,
+                binding.editProductEtNameProduct.text.toString(),
+                binding.editProductEtDescription.text.toString(),
+                binding.editProductEtAmount.text.toString().toInt(),
+                binding.editProductEtPrice.text.toString().toInt(),
+                nameDocument,
+                onSuccess = { onSuccess ->
+                    Toast.makeText(this, onSuccess, Toast.LENGTH_SHORT).show()
+                },
+                onError = { onError ->
+                    Toast.makeText(this, onError, Toast.LENGTH_SHORT).show()
+                }
+            )
+        }
+    }
 }
