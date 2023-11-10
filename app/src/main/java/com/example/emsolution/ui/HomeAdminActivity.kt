@@ -33,18 +33,17 @@ class HomeAdminActivity : AppCompatActivity() {
 
         val carousel: ImageCarousel = findViewById(R.id.carousel)
         val db = FirebaseFirestore.getInstance()
+        val nameCollecttion = "productosTextil"
 
-        val qCollection = db.collection("q")
-        val specificCollection = qCollection.document("R4QQ1Qbs9j8d8n7kOKvV").collection("22")
+        val qCollection = db.collection(nameCollecttion)
 
-        specificCollection.get().addOnSuccessListener { productosQuerySnapshot ->
+        qCollection.get().addOnSuccessListener { productosQuerySnapshot ->
             for (productoDocument in productosQuerySnapshot.documents) {
-                val producto = productoDocument.toObject(ProductData::class.java)
-                val imageUrlString = producto?.image.toString()
+                val productImage = productoDocument.getString("imagen")
+                val imageUrlString = productImage.toString()
                 list.add(CarouselItem(imageUrlString))
                 }
 
-            // Agrega las imágenes al carrousel
             carousel.addData(list)
         }
 

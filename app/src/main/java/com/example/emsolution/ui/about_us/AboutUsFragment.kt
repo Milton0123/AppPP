@@ -26,11 +26,8 @@ class AboutUsFragment : Fragment() {
     ): View {
         val slideshowViewModel =
             ViewModelProvider(this).get(AboutUsViewModel::class.java)
-
         _binding = FragmentAboutUsBinding.inflate(inflater, container, false)
         val root: View = binding.root
-        return root
-
         val carousel: ImageCarousel = binding.carouselAboutus
 
         val list = mutableListOf<CarouselItem>()
@@ -38,6 +35,8 @@ class AboutUsFragment : Fragment() {
         list.add(CarouselItem("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.es%2Ffotos-vectores-gratis%2Fhombre-formal&psig=AOvVaw1n6PlpAYNMRI76hgdNB4lj&ust=1699669170371000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCIjF05uvuIIDFQAAAAAdAAAAABAE", "Elizalde Eduardo Agustin"))
         list.add(CarouselItem("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.es%2Ffotos-vectores-gratis%2Fhombre&psig=AOvVaw1n6PlpAYNMRI76hgdNB4lj&ust=1699669170371000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCIjF05uvuIIDFQAAAAAdAAAAABAY", "Maletta Milton Ezequiel"))
         carousel.addData(list)
+        return root
+
     }
 
     override fun onDestroyView() {
