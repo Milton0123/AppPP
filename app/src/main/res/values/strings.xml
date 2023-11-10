@@ -31,7 +31,9 @@
     <string name="menu_news">NOVEDADES</string>
     <string name="cod_producto">Codigo de producto</string>
     <string name="about_us_tv_title">example description EMsolution</string>
-    <string name="about_us_tv_descrition">ejemplo de descripcion en sobre nosotros, ejemplo de descripcion en sobre nosotros, ejemplo de descripcion en sobre nosotros</string>
+    <string name="about_us_tv_descrition">En EMSolution, estamos comprometidos a hacerte la vida más fácil y mantenerte conectado con lo que más te importa. Nuestra misión es ofrecerte soluciones innovadoras y una experiencia excepcional.
+Gracias por ser parte de nuestra comunidad.
+Equipo de EMSolution"</string>
     <string name="about_us_copyright">Derechos de autor © 2023 EM solution. Todos los derechos reservados.</string>
     <string name="select_product">Seleccionar el producto a editar</string>
     <string name="title_product">titulo del producto</string>
