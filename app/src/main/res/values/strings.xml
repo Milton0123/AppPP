@@ -16,7 +16,7 @@
     <string name="cod_product">Codigo de producto</string>
     <string name="description_product">Producto</string>
     <string name="amount">0</string>
-    <string name="arrow_down">bajar</string>
+    <string name="arrow_down">Bajar</string>
     <string name="carry">Cargar</string>
     <string name="finish">Finalizar</string>
     <string name="total_price">Total: $</string>
@@ -26,25 +26,27 @@
     <string name="menu_see_stock">VER STOCK</string>
     <string name="menu_crud_stock">CRUD STOCK</string>
     <string name="menu_about_us">SOBRE NOSOTROS</string>
-    <string name="menu_logout">CARRAR SESION</string>
+    <string name="menu_logout">CERRAR SESION</string>
     <string name="news_description">¡Ultima Novedad!</string>
     <string name="menu_news">NOVEDADES</string>
     <string name="cod_producto">Codigo de producto</string>
     <string name="about_us_tv_title">example description EMsolution</string>
-    <string name="about_us_tv_descrition">ejemplo de descripcion en sobre nosotros, ejemplo de descripcion en sobre nosotros, ejemplo de descripcion en sobre nosotros</string>
+    <string name="about_us_tv_descrition">En EMSolution, estamos comprometidos a hacerte la vida más fácil y mantenerte conectado con lo que más te importa. Nuestra misión es ofrecerte soluciones innovadoras y una experiencia excepcional.
+Gracias por ser parte de nuestra comunidad.
+Equipo de EMSolution</string>
     <string name="about_us_copyright">Derechos de autor © 2023 EM solution. Todos los derechos reservados.</string>
     <string name="select_product">Seleccionar el producto a editar</string>
-    <string name="title_product">titulo del producto</string>
-    <string name="description_product_crud">descripcion del producto</string>
-    <string name="amount_product">cantidad</string>
-    <string name="price_product">precio</string>
+    <string name="title_product">Titulo del producto</string>
+    <string name="description_product_crud">Descripcion del producto</string>
+    <string name="amount_product">Cantidad</string>
+    <string name="price_product">Precio</string>
     <string name="sign_price">$</string>
-    <string name="add_barcode">codigo de barras</string>
-    <string name="add_name">nombre del producto</string>
-    <string name="add_description">descripcion del producto</string>
+    <string name="add_barcode">Codigo de barras</string>
+    <string name="add_name">Nombre del producto</string>
+    <string name="add_description">Descripcion del producto</string>
     <string name="add_price">0000</string>
     <string name="add_amount">cantidad</string>
-    <string name="save_changes">guardar cambios</string>
+    <string name="save_changes">Guardar cambios</string>
     <string name="add_name_collection">productosTextil</string>
     <string name="cb_barcode">CB:</string>
     <string name="ref_barcode">BARCODE</string>
