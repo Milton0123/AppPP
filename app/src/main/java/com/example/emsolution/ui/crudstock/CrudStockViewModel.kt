@@ -7,10 +7,10 @@ import com.example.emsolution.back.ProductData
 import com.google.firebase.firestore.FirebaseFirestore
 
 class CrudStockViewModel : ViewModel() {
-    val db = FirebaseFirestore.getInstance()
-    val nameCollecttion = "productosTextil"
+    private val db = FirebaseFirestore.getInstance()
+    private val nameCollection = "productosTextil"
     fun getProduct(onSuccess: (List<ProductData>) -> Unit, onFailure: (Any?) -> Unit) {
-        db.collection(nameCollecttion)
+        db.collection(nameCollection)
             .get()
             .addOnSuccessListener { querySnapShot ->
                 if (!querySnapShot.isEmpty) {
@@ -43,14 +43,14 @@ class CrudStockViewModel : ViewModel() {
     }
 
     fun removeProduct(itemTrashBarcode : Int, onSuccess : () -> Unit, onFailure: (String) -> Any){
-        db.collection(nameCollecttion)
+        db.collection(nameCollection)
             .whereEqualTo("barcode", itemTrashBarcode)
             .get()
             .addOnSuccessListener { querySnapshot ->
                 if (!querySnapshot.isEmpty) {
                     val documentSnapshot = querySnapshot.documents[0]
                     val nameDocumentEdit = documentSnapshot.id
-                    db.collection(nameCollecttion)
+                    db.collection(nameCollection)
                         .document(nameDocumentEdit)
                         .delete()
                         .addOnSuccessListener {

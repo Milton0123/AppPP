@@ -1,18 +1,14 @@
 package com.example.emsolution.ui.news
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.Navigation
-import com.example.emsolution.R
-import com.example.emsolution.databinding.FragmentCrudStockBinding
 import com.example.emsolution.databinding.FragmentNewsBinding
-import com.example.emsolution.ui.HomeAdminActivity
+import com.google.firebase.firestore.FirebaseFirestore
+import org.imaginativeworld.whynotimagecarousel.ImageCarousel
+import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
 
 class NewsFragment : Fragment() {
 
@@ -21,6 +17,7 @@ class NewsFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+    val list = mutableListOf<CarouselItem>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,6 +26,7 @@ class NewsFragment : Fragment() {
     ): View {
         _binding = FragmentNewsBinding.inflate(inflater, container, false)
         val root: View = binding.root
+        showCarousel()
         return root
     }
 
@@ -36,6 +34,25 @@ class NewsFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    fun showCarousel(){
+
+        val carousel: ImageCarousel = binding.carousel
+        val db = FirebaseFirestore.getInstance()
+        val nameCollecttion = "productosTextil"
+
+        val qCollection = db.collection(nameCollecttion)
+
+        qCollection.get().addOnSuccessListener { productosQuerySnapshot ->
+            for (productoDocument in productosQuerySnapshot.documents) {
+                val productImage = productoDocument.getString("imagen")
+                val imageUrlString = productImage.toString()
+                list.add(CarouselItem(imageUrlString))
+            }
+
+            carousel.addData(list)
+        }
     }
 
 }

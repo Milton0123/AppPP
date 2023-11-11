@@ -33,7 +33,7 @@
             android:layout_weight="1"
             android:text="@string/title_product"
             android:textColor="@color/white"
-            android:textSize="14sp" />
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/crud_stock_tv_description"
@@ -42,7 +42,7 @@
             android:layout_weight="1"
             android:text="@string/description_product_crud"
             android:textColor="@color/white"
-            android:textSize="14sp" />
+            android:textSize="12sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -55,7 +55,7 @@
                 android:layout_height="match_parent"
                 android:text="@string/amount_product"
                 android:textColor="@color/white"
-                android:textSize="14sp" />
+                android:textSize="12sp" />
 
             <TextView
                 android:id="@+id/crud_stock_tv_amount"
@@ -91,7 +91,7 @@
             android:layout_weight="1"
             android:text="@string/price_product"
             android:textColor="@color/white"
-            android:textSize="14sp" />
+            android:textSize="12sp" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -111,7 +111,7 @@
             android:layout_weight="1"
             android:text="@string/cb_barcode"
             android:textColor="@color/white"
-            android:textSize="14sp" />
+            android:textSize="12sp" />
 
         <TextView
             android:id="@+id/crud_stock_tv_barcode"
@@ -120,7 +120,7 @@
             android:layout_weight="1"
             android:text="@string/ref_barcode"
             android:textColor="@color/white"
-            android:textSize="14sp" />
+            android:textSize="12sp" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 

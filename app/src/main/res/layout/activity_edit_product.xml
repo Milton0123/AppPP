@@ -75,6 +75,8 @@
             android:layout_weight="1"
             android:background="@drawable/radius_btn"
             android:gravity="center"
+            android:inputType="textMultiLine|textNoSuggestions"
+            android:maxLength="30"
             android:text="@string/add_name_collection"
             android:textAlignment="center"
             android:textColor="@color/white"
@@ -89,6 +91,7 @@
             android:background="@drawable/radius_btn"
             android:gravity="center"
             android:hint="@string/add_barcode"
+            android:maxLength="30"
             android:textAlignment="center"
             android:textColorHint="@color/white"
             android:textSize="16sp"
@@ -102,6 +105,7 @@
             android:layout_weight="1"
             android:background="@drawable/radius_btn"
             android:gravity="center"
+            android:maxLength="30"
             android:hint="@string/add_name"
             android:textAlignment="center"
             android:textColorHint="@color/white"
@@ -116,10 +120,12 @@
             android:layout_weight="1"
             android:background="@drawable/radius_btn"
             android:gravity="center"
+            android:maxLength="30"
             android:hint="@string/add_description"
             android:textAlignment="center"
             android:textColorHint="@color/white"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:inputType="text" />
 
         <LinearLayout
             android:id="@+id/edit_product_ll_amount"
@@ -174,23 +180,35 @@
             android:background="@drawable/radius_btn"
             android:gravity="center"
             android:hint="@string/add_price"
+            android:maxLength="30"
             android:textAlignment="center"
             android:textColorHint="@color/white"
             android:textSize="16sp"
             android:drawableStart="@drawable/ic_price"
             android:paddingHorizontal="5dp"
             android:inputType="number"/>
+
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/edit_product_bt_save"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginHorizontal="40dp"
             android:layout_weight="1"
-            android:background="@drawable/radius_btn"
+            android:background="@drawable/validate_btn"
             android:gravity="center"
             android:text="@string/save_changes"
             android:textAlignment="center"
+            android:textColor="#452111"
+            android:textSize="14sp"
+            android:enabled="false"/>
+        <TextView
+            android:id="@+id/crud_stock_tv_state_button"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:textSize="12sp"
             android:textColor="@color/white"
-            android:textSize="14sp" />
+            android:gravity="center"
+            android:text="@string/complete_fields_edit"/>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

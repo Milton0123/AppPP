@@ -8,7 +8,7 @@ class LoginViewModel() : ViewModel() {
     val fieldData = MutableLiveData<Boolean>()
 
     fun validateButton(userName: String, password: String) {
-        fieldData.postValue(Utils.checkFields(userName, password))
+        fieldData.postValue(Utils.checkFieldsUser(userName, password))
     }
 
 }

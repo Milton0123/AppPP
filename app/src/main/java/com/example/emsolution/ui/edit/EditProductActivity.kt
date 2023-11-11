@@ -11,6 +11,7 @@ import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import androidx.core.widget.doAfterTextChanged
 import com.example.emsolution.databinding.ActivityEditProductBinding
 import com.example.emsolution.ui.HomeAdminActivity
 import com.example.emsolution.ui.crudstock.ItemUpdate
@@ -20,9 +21,10 @@ class EditProductActivity : AppCompatActivity() {
     private lateinit var binding: ActivityEditProductBinding
     private lateinit var viewModel: EditProductViewModel
     private var imageUriEdit: Uri? = null
+    private var imageEdit : Boolean= false
     private lateinit var imagePicker: ActivityResultLauncher<Intent>
-    private var imageEdit = false
     private var selectImageEdit: Uri? = null
+    private var imageEditStatus : Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +46,20 @@ class EditProductActivity : AppCompatActivity() {
         viewModel.amountData.observe(this) {
             initValues(it)
         }
+
+        viewModel.checkFieldData.observe(this) {
+            if(!it){
+                binding.crudStockTvStateButton.text = "complete los campos no cargados"
+            }else{
+                binding.crudStockTvStateButton.text = ""
+            }
+            binding.editProductBtSave.isEnabled = it
+        }
+
+        viewModel.stateBtData.observe(this){
+            imageEditStatus = it
+        }
+
     }
 
     private fun initValues(amount: Int) {
@@ -56,9 +72,11 @@ class EditProductActivity : AppCompatActivity() {
             when (fragmentOption) {
                 "updateOption" -> {
                     updateOption()
+                    checkFieldsUpdate()
                 }
                 "addOption" -> {
                     addOption()
+                    checkFieldAdd()
                 }
             }
         }
@@ -113,7 +131,7 @@ class EditProductActivity : AppCompatActivity() {
                     val data: Intent? = result.data
                     imageUriEdit = data?.data
                     binding.editProductIvImage.setImageURI(imageUriEdit)
-                    imageEdit = true
+                    viewModel.imageEdit(true)
                 }
             }
     }
@@ -177,9 +195,9 @@ class EditProductActivity : AppCompatActivity() {
 
         if (updateData != null) {
 
-            if(!imageEdit){
+            if (!imageEdit) {
                 selectImageEdit = updateData.image
-            }else{
+            } else {
                 selectImageEdit = imageUriEdit
             }
             viewModel.updateOption(
@@ -197,5 +215,151 @@ class EditProductActivity : AppCompatActivity() {
                 }
             )
         }
+    }
+
+    fun checkFieldsUpdate() {
+        callCheckUpdate("imagen", imageEdit.toString())
+        binding.editProductEtBarcode.doAfterTextChanged {
+            callCheckUpdate(
+                "barcode",
+                it.toString()
+            )
+        }
+        binding.editProductEtNameProduct.doAfterTextChanged {
+            callCheckUpdate(
+                "nameProduct",
+                it.toString()
+            )
+        }
+        binding.editProductEtDescription.doAfterTextChanged {
+            callCheckUpdate(
+                "description",
+                it.toString()
+            )
+        }
+        binding.editProductEtAmount.doAfterTextChanged {
+            callCheckUpdate(
+                "amount",
+                it.toString()
+            )
+        }
+        binding.editProductEtPrice.doAfterTextChanged {
+            callCheckUpdate(
+                "price",
+                it.toString()
+            )
+        }
+    }
+
+    fun callCheckUpdate(selectField: String, field: String) {
+        when (selectField) {
+            "nameProduct" -> {
+                viewModel.checkFieldsUpdate(
+                    field,
+                    binding.editProductEtDescription.text.toString(),
+                    binding.editProductEtAmount.text.toString(),
+                    binding.editProductEtPrice.text.toString()
+                )
+            }
+            "description" -> {
+                viewModel.checkFieldsUpdate(
+                    binding.editProductEtNameProduct.text.toString(),
+                    field,
+                    binding.editProductEtAmount.text.toString(),
+                    binding.editProductEtPrice.text.toString()
+                )
+            }
+            "amount" -> {
+                viewModel.checkFieldsUpdate(
+                    binding.editProductEtNameProduct.text.toString(),
+                    binding.editProductEtDescription.text.toString(),
+                    field,
+                    binding.editProductEtPrice.text.toString()
+                )
+            }
+            "price" -> {
+                viewModel.checkFieldsUpdate(
+                    binding.editProductEtNameProduct.text.toString(),
+                    binding.editProductEtDescription.text.toString(),
+                    binding.editProductEtAmount.text.toString(),
+                    field
+                )
+            }
+        }
+    }
+
+    fun checkFieldAdd() {
+        callCheckAdd("imagen", imageEditStatus.toString())
+        binding.editProductEtBarcode.doAfterTextChanged {
+            callCheckAdd(
+                "barcode",
+                it.toString()
+            )
+        }
+        binding.editProductEtNameProduct.doAfterTextChanged {
+            callCheckAdd(
+                "nameProduct",
+                it.toString()
+            )
+        }
+        binding.editProductEtDescription.doAfterTextChanged {
+            callCheckAdd(
+                "description",
+                it.toString()
+            )
+        }
+        binding.editProductEtAmount.doAfterTextChanged { callCheckAdd("amount", it.toString()) }
+        binding.editProductEtPrice.doAfterTextChanged { callCheckAdd("price", it.toString()) }
+    }
+
+    fun callCheckAdd(selectField: String, field: String) {
+        when (selectField) {
+            "barcode" -> {
+                viewModel.checkFieldsAdd(
+                    field,
+                    binding.editProductEtNameProduct.text.toString(),
+                    binding.editProductEtDescription.text.toString(),
+                    binding.editProductEtAmount.text.toString(),
+                    binding.editProductEtPrice.text.toString()
+                )
+            }
+            "nameProduct" -> {
+                viewModel.checkFieldsAdd(
+                    binding.editProductEtBarcode.text.toString(),
+                    field,
+                    binding.editProductEtDescription.text.toString(),
+                    binding.editProductEtAmount.text.toString(),
+                    binding.editProductEtPrice.text.toString()
+                )
+            }
+            "description" -> {
+                viewModel.checkFieldsAdd(
+                    binding.editProductEtBarcode.text.toString(),
+                    binding.editProductEtNameProduct.text.toString(),
+                    field,
+                    binding.editProductEtAmount.text.toString(),
+                    binding.editProductEtPrice.text.toString()
+                )
+            }
+            "amount" -> {
+                viewModel.checkFieldsAdd(
+                    binding.editProductEtBarcode.text.toString(),
+                    binding.editProductEtNameProduct.text.toString(),
+                    binding.editProductEtDescription.text.toString(),
+                    field,
+                    binding.editProductEtPrice.text.toString()
+                )
+            }
+            "price" -> {
+                viewModel.checkFieldsAdd(
+                    binding.editProductEtBarcode.text.toString(),
+                    binding.editProductEtNameProduct.text.toString(),
+                    binding.editProductEtDescription.text.toString(),
+                    binding.editProductEtAmount.text.toString(),
+                    field
+                )
+            }
+        }
+
     }
 }

@@ -1,15 +1,16 @@
 package com.example.emsolution.ui.edit
 
 import android.net.Uri
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.google.android.gms.tasks.OnSuccessListener
+import com.example.emsolution.back.Utils
 import com.google.firebase.firestore.FirebaseFirestore
 
 
 class EditProductViewModel : ViewModel() {
     var amountData = MutableLiveData<Int>()
+    var checkFieldData = MutableLiveData<Boolean>()
+    var stateBtData = MutableLiveData<Boolean>()
 
     fun findNameDocument(barcodeDocument : Int, documentEdit : (String) -> Any) {
         val db = FirebaseFirestore.getInstance()
@@ -120,6 +121,16 @@ class EditProductViewModel : ViewModel() {
             fieldAmountData = 0
         }
         amountData.postValue(fieldAmountData)
+    }
+
+    fun checkFieldsUpdate(title : String, description : String, amount : String, price : String){
+        checkFieldData.postValue(Utils.checkFieldsUpdate(title,description,amount,price))
+    }
+    fun checkFieldsAdd( barcode: String, title : String, description : String, amount : String, price : String){
+        checkFieldData.postValue(Utils.checkFieldsAdd(barcode,title,description,amount,price))
+    }
+    fun imageEdit(state : Boolean){
+        stateBtData.postValue(state)
     }
 
 }

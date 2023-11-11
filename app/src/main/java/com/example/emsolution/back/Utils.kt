@@ -12,8 +12,27 @@ object Utils {
             .matches() && !email.contains(" ")
     }
 
-    fun checkFields(user: String, pass: String): Boolean {
+    fun checkFieldsUser(user: String, pass: String): Boolean {
         return checkEmail(user) && checkPassword(pass)
+    }
+
+    fun checkFieldsUpdate(
+        title: String,
+        description: String,
+        amount: String,
+        price: String
+    ): Boolean {
+        return !(title.isEmpty() || description.isEmpty() || amount.isEmpty() || price.isEmpty())
+    }
+
+    fun checkFieldsAdd(
+        barcode: String,
+        title: String,
+        description: String,
+        amount: String,
+        price: String
+    ): Boolean {
+        return !( barcode.isEmpty() || title.isEmpty() || description.isEmpty() || amount.isEmpty() || price.isEmpty())
     }
 
 }
